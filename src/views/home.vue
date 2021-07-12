@@ -60,7 +60,7 @@ export default {
       this.activityNum = data.data.activityNum
     },
     gotologin () {
-      this.$router.push('/main')
+      this.$router.push('/system')
     },
     canplay () {
       this.vedioCanPlay = true
