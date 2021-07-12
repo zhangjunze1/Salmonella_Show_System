@@ -1,10 +1,10 @@
 <template>
   <el-container class="main_container">
     <!--侧边栏-->
-    <el-aside :width="isCollapse?'64px':'200px'">
+    <el-aside :width="isCollapse?'64px':'220px'">
       <div class="title_box_main">
         <i style="margin-right: 8px" class="el-icon-odometer"></i>
-        <span >学生社团管理系统</span>
+        <span >沙门氏杆菌展示系统</span>
       </div>
       <!--展开收起-->
       <div class="toggle_box" @click="toggleCollapse"></div>
@@ -26,8 +26,6 @@
     <el-container>
       <!--头部布局-->
       <el-header >
-        <span style="margin-left: 20px; margin-right: 20px; font-size: 18px;color: black;size: 20px">{{this.$root.USER.trueName }}{{this.$root.USER.position }},欢迎你的归来！</span>
-
         <div class="right_box">
           <el-dropdown>
             <img src="../assets/img/timg.jpg">
@@ -45,7 +43,7 @@
         <router-view></router-view>
       </el-main>
       <el-footer style="height: 25px;text-align: center;background: #F0F8FF" >
-        ©Copyright 2021 zhangjz-toishT工作室 | 浙大城市学院小伙
+        ©Copyright 2021 zhangjz-wangYK工作室 | 浙大城市学院小伙
       </el-footer>
     </el-container>
   </el-container>
@@ -73,7 +71,7 @@ export default {
     },
     quit () {
       window.sessionStorage.clear()
-      this.$router.push('/login')
+      this.$router.push('/home')
     },
     change () {
       this.$router.push('/host')

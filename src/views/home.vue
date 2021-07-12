@@ -2,43 +2,27 @@
   <div class="home">
     <div class="video-container">
       <div :style="fixStyle" class="filter">
-        <el-row :gutter="0">
-          <el-col :span="10" :offset="21" class="top" style="margin-top: 11px">
-            <el-button :span="1" type="primary" size="mini" @click="gotologin">成员登录</el-button>
-            <el-button :span="1" type="warning" size="mini" @click="UserRegister">成员注册</el-button>
-          </el-col>
-        </el-row>
-        <el-row style="margin-top: 100px;margin-left: 300px">
-          <div class="title" style="margin-right: 200px">
-            <span>学生社团管理系统</span>
+        <el-row style="margin-top: 200px;margin-left: 300px">
+          <div class="title" style="margin-right: 200px" @click="gotologin">
+            <span>沙门氏杆菌展示系统</span>
           </div>
         </el-row>
 
-        <el-row style="margin-top: 200px;margin-left: 300px">
-          <el-col :span="8" class="t1">
-            <div class="text text1" >{{ memberNum }}</div>
-            <div class="textt tt1" >系统成员</div>
-          </el-col>
-          <el-col :span="8" class="t2">
-            <div class="text text2">{{ assNum }}</div>
-            <div class="textt tt2">社团数量</div>
-          </el-col>
-          <el-col :span="8" class="t3">
-            <div class="text text3">{{ activityNum }}</div>
-            <div class
-                   ="textt tt3">活动数量
-            </div>
-          </el-col>
-        </el-row>
-
-<!--        <el-row style="margin-top: 100px;margin-left: 300px">-->
-<!--          <div class="textBox">-->
-<!--            <div class="title" style="margin-right: 200px;height: 40px">-->
-<!--              <div class="inner-container">-->
-<!--                <p class="text" v-for="(text, index) in arr" :key="index">{{text}}</p>-->
-<!--              </div>-->
+<!--        <el-row style="margin-top: 200px;margin-left: 300px">-->
+<!--          <el-col :span="8" class="t1">-->
+<!--            <div class="text text1" >{{ memberNum }}</div>-->
+<!--            <div class="textt tt1" >系统成员</div>-->
+<!--          </el-col>-->
+<!--          <el-col :span="8" class="t2">-->
+<!--            <div class="text text2">{{ assNum }}</div>-->
+<!--            <div class="textt tt2">社团数量</div>-->
+<!--          </el-col>-->
+<!--          <el-col :span="8" class="t3">-->
+<!--            <div class="text text3">{{ activityNum }}</div>-->
+<!--            <div class-->
+<!--                   ="textt tt3">活动数量-->
 <!--            </div>-->
-<!--          </div>-->
+<!--          </el-col>-->
 <!--        </el-row>-->
 
       </div>
@@ -62,15 +46,7 @@ export default {
       assNum: 2222,
       activityNum: 33333,
       vedioCanPlay: false,
-      fixStyle: '',
-      arr: [
-        '1 不是被郭德纲发现的，也不是一开始就收为徒弟。',
-        '2 现在雅阁这个状态像极了新A4L上市那段日子。',
-        '3 低配太寒碜，各种需要加装，中配定价过高，又没啥特色',
-        '4 然后各种机油门、经销商造反什么的幺蛾子。',
-        '5 看五月销量，建议参考A4，打8折吧。',
-        '1 不是被郭德纲发现的，也不是一开始就收为徒弟。'
-      ]
+      fixStyle: ''
     }
   },
   created () {
@@ -84,10 +60,7 @@ export default {
       this.activityNum = data.data.activityNum
     },
     gotologin () {
-      this.$router.push('/login')
-    },
-    UserRegister () {
-      this.$router.push('/register')
+      this.$router.push('/main')
     },
     canplay () {
       this.vedioCanPlay = true
@@ -153,7 +126,7 @@ export default {
 .video-container .filter {
   z-index: 1;
   position: absolute;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0);
   width: 100%;
 }
 
