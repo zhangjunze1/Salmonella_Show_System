@@ -35,8 +35,6 @@
 </template>
 
 <script>
-import { findsystemData } from '@/api/assData'
-
 export default {
   name: 'home',
   components: {},
@@ -50,15 +48,8 @@ export default {
     }
   },
   created () {
-    this.getsystemData()
   },
   methods: {
-    async getsystemData () {
-      const { data } = await findsystemData()
-      this.memberNum = data.data.memberNum
-      this.assNum = data.data.assNum
-      this.activityNum = data.data.activityNum
-    },
     gotologin () {
       this.$router.push('/system')
     },

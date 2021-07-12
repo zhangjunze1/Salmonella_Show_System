@@ -14,10 +14,17 @@ import axios from 'axios'
 // eslint-disable-next-line no-unused-vars
 import VueAMap from 'vue-amap'
 import BootstrapVue from 'bootstrap-vue'
+import APlayer from '@moefe/vue-aplayer'
+Vue.use(APlayer, {
+  defaultCover: 'https://github.com/u3u.png',
+  productionTip: true
+})
 
 Vue.use(VueAMap)
 Vue.use(ElementUI)
 Vue.use(BootstrapVue)
+Vue.prototype.$http = axios
+axios.withCredentials = true
 
 VueAMap.initAMapApiLoader({
   key: '241c26aea06ed390a44598314eefd604',
