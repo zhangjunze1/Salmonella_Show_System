@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <Audio></Audio>
+    <TopNavBar v-show="( path==='/system' )"></TopNavBar>
+    <TopAdminBar v-show="( path==='/home' || path==='/invite' )"></TopAdminBar>
+<!--    <TopAdminBar ></TopAdminBar>-->
+<!--    <Audio></Audio>-->
     <router-view/>
   </div>
 </template>
 
 <script>
-import Audio from './components/music/Audio'
+import TopNavBar from './components/layout/TopNavBar'
+// import Audio from './components/music/Audio'
 import Vue from 'vue'
+import TopAdminBar from './components/layout/TopAdminBar'
 export default {
   data () {
     return {
@@ -16,7 +21,9 @@ export default {
     }
   },
   components: {
-    Audio
+    TopAdminBar,
+    // Audio,
+    TopNavBar
   },
   // 判断路由
   mounted () {

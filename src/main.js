@@ -41,36 +41,9 @@ new Vue({
   data: function () {
     return {
       USER: [{
-        signature: '',
-        name: null,
-        id: null,
-        trueName: null,
-        authority: null,
-        score: null,
-        number: null,
-        gender: null,
-        position: null,
-        token: null,
-        phone: null,
-        pic: null,
-        pwd: null
-      }],
-      ASS: [{
-        assId: null,
-        assName: null,
-        assPosition: null,
-        assTeacher: null,
-        assCapital: null,
-        assNotice: null
-      }],
-      ApplyLeader: [{
-        applyNum: null
-      }],
-      ASSAPPLY: [{
-        applyNum: null
-      }],
-      NOTICE: [{
-        notice: null
+        id: -1,
+        number: '',
+        invitationCode: ''
       }]
     }
   },

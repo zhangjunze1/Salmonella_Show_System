@@ -3,10 +3,10 @@
     <div class="home-container">
       <div>
         <h1 class="blog-title animated zoomIn" style="margin-top: 50px">
-          沙门氏杆菌展示系统
+          后台管理系统
         </h1>
       </div>
-      <div class="login_box" style="margin-top: 50px">
+      <div class="login_box1" style="margin-top: 50px">
         <!--头像-->
         <div class="avatar_box">
           <img src="../assets/img/dna1.png" class="avatar_img">
@@ -19,15 +19,8 @@
           <el-form-item prop="password">
             <el-input type="password" v-model="loginForm.password" placeholder="请输入登录密码" prefix-icon="el-icon-lock"></el-input>
           </el-form-item>
-          <el-form-item prop="verifyCode">
-            <div class="verifyCode_box">
-              <el-input v-model="loginForm.verifyCode" placeholder="请输入计算结果" prefix-icon="el-icon-mobile" class="verifyCode"></el-input>
-              <img src="../assets/img/mskKPg.png" alt="" class="verifyCode_img">
-            </div>
-          </el-form-item>
           <el-form-item class="login_btn">
             <el-button type="warning" @click="back">返回</el-button>
-            <el-button type="warning" @click="toInvite">邀请码注册</el-button>
             <el-button type="primary" @click="submitForm('loginForm')">登录</el-button>
             <el-button @click="resetForm('loginForm')">重置</el-button>
           </el-form-item>
@@ -40,7 +33,7 @@
 
 <script>
 export default {
-  name: 'home',
+  name: 'adminlogin',
   components: {},
   data () {
     return {
@@ -73,14 +66,11 @@ export default {
     back () {
       this.$router.back()
     },
-    toInvite () {
-      this.$router.push('/invite')
-    },
     resetForm (formName) {
       this.$refs[formName].resetFields()
     },
     submitForm () {
-      this.$router.push('/system')
+      this.$router.push('/adminMain')
     }
     // canplay () {
     //   this.vedioCanPlay = true
@@ -168,9 +158,9 @@ export default {
   text-align: center;
 }
 
-.login_box {
+.login_box1 {
   width: 450px;
-  height: 380px;
+  height: 270px;
   background-color: unset;
   border-radius: 3px;
   border-width: 100px;

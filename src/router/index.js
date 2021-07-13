@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/system'
   },
   {
     path: '/home',
@@ -17,6 +17,16 @@ const routes = [
     path: '/system',
     name: 'System',
     component: () => import('../views/System.vue')
+  },
+  {
+    path: '/invite',
+    name: 'Invite',
+    component: () => import('../views/me/invite.vue')
+  },
+  {
+    path: '/adminlogin',
+    name: 'AdminLogin',
+    component: () => import('../views/AdminLogin.vue')
   }
 ]
 
