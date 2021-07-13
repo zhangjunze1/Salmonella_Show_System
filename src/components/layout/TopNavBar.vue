@@ -142,7 +142,7 @@ export default {
     logout () {
       window.sessionStorage.clear()
       this.$root.USER.id = ''
-      this.$root.USER.number = ''
+      this.$root.USER.name = ''
       this.$root.USER.invitationCode = ''
       this.$router.push('/system')
       // 刷新页面，删除vuex数据

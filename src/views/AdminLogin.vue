@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     back () {
-      this.$router.back()
+      this.$router.push('/home')
     },
     resetForm (formName) {
       this.$refs[formName].resetFields()

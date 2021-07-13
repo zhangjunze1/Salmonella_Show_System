@@ -27,6 +27,27 @@ const routes = [
     path: '/adminlogin',
     name: 'AdminLogin',
     component: () => import('../views/AdminLogin.vue')
+  },
+  {
+    path: '/adminMain',
+    name: 'AdminMain',
+    component: () => import('../views/adminSystem/adminMain.vue'),
+    children: [
+      {
+        path: '/host',
+        name: 'Host',
+        component: () => import('../views/adminSystem/Host.vue')
+      },
+      {
+        path: '/data',
+        name: 'Data',
+        component: () => import('../views/adminSystem/Data.vue')
+      },
+      {
+        path: '/science',
+        name: 'Science',
+        component: () => import('../views/adminSystem/Science.vue')
+      }]
   }
 ]
 

@@ -42,8 +42,12 @@ new Vue({
     return {
       USER: [{
         id: -1,
-        number: '',
+        name: '',
         invitationCode: ''
+      }],
+      ADMIN: [{
+        id: '',
+        name: ''
       }]
     }
   },

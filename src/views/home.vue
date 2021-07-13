@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     back () {
-      this.$router.back()
+      this.$router.push('/system')
     },
     toInvite () {
       this.$router.push('/invite')
