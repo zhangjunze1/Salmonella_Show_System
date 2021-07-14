@@ -12,15 +12,16 @@
 <style scoped>
   .footer-wrap {
     bottom: 0!important;
-    width: 101%;
+    width: 100%;
     line-height: 1;
     position: relative;
-    padding: 50px 20px;
-    color: #eee;
-    font-size: 14px;
+    padding: 30px 20px;
+    color: black;
+    font-size: 16px;
     text-align: center;
-    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
+    background: #EEEEEE;
+    /*background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);*/
+    background-size: 200% 400%;
     animation: Gradient 10s ease infinite;
   }
   .footer-wrap a {

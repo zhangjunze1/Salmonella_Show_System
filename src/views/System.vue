@@ -2,9 +2,9 @@
   <div id="app" class="myhome" >
     <div class="home-banner">
       <div class="banner-container">
-        <h1 class="blog-title animated zoomIn">
+        <p class="home-title">
           沙门氏杆菌展示系统
-        </h1>
+        </p>
         <!-- 联系方式 -->
         <div class="blog-contact animated zoomIn">
           <a class="github circular icon button" data-content="https://github.com/zhangjunze1/salmonella_show_system" data-position="bottom center" style="margin-right: 50px"><i class="github icon"></i></a>
@@ -56,27 +56,32 @@ export default {
 
 <style scoped>
 .m-home {
-  padding-top: 105vh !important;
+  padding-top: 80vh !important;
   padding-bottom: 0px !important;
+}
+.home-title {
+  font-size: 32px;
+  font-weight: 700;
 }
 .home-banner {
      position: absolute;
      top: 0px;
      left: 0;
      right: 0;
-     height: 100vh;
-     background: url("../assets/img/system.jpg") center center /
-    cover no-repeat;
-     background-color: #49b1f5;
+     height: 20vh;
+    /*  background: #EEEEEE;*/
+    /* background: url("../assets/img/system.jpg") center center /*/
+    /*cover no-repeat;*/
+     background-color: #EEEEEE;
      background-attachment: fixed;
      text-align: center;
      color: #fff !important;
      animation: header-effect 1s !important;
    }
 .banner-container {
-  margin-top: 43vh;
+  margin-top: 5vh;
   line-height: 1.5;
-  color: #eee;
+  color: black;
 }
 .blog-contact a {
      color: #fff !important;

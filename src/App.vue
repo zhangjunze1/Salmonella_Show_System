@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TopNavBar v-show="( path==='/system' )"></TopNavBar>
-    <TopAdminBar v-show="( path==='/home' || path==='/invite' )"></TopAdminBar>
+    <TopAdminBar v-show="( path==='/login' || path==='/invite' )"></TopAdminBar>
 <!--    <TopAdminBar ></TopAdminBar>-->
 <!--    <Audio></Audio>-->
     <router-view/>

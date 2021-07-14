@@ -7,6 +7,20 @@
         <span slot="title">主界面</span>
       </el-menu-item>
 
+      <el-submenu index="/Code">
+        <template slot="title">
+          <i class="el-icon-help"></i>
+          <span>邀请码</span>
+        </template>
+        <el-menu-item index="/invitationCode" >
+          <i class="el-icon-collection-tag"></i>
+          <span slot="title">邀请码生成</span>
+        </el-menu-item>
+        <el-menu-item index="/showCode">
+          <i class="el-icon-magic-stick"></i>
+          <span slot="title">邀请码列表</span>
+        </el-menu-item>
+      </el-submenu>
       <el-submenu index="/Manager">
         <template slot="title">
           <i class="el-icon-tickets"></i>

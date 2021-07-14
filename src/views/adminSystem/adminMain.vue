@@ -26,7 +26,7 @@
     <el-container>
       <!--头部布局-->
       <el-header >
-        <span style="margin-left: 20px; margin-right: 20px; font-size: 18px;color: black;size: 20px">后端管理系统-欢迎您</span>
+        <span style="margin-left: 20px; margin-right: 20px; font-size: 18px;color: black;size: 20px">后端管理系统-欢迎您-管理员编号:{{this.$root.ADMIN.id}}</span>
 
         <div class="right_box">
           <el-dropdown>
@@ -58,11 +58,19 @@ export default {
   data () {
     return {
       isCollapse: false,
-      systemnotice: ''
+      adminId: this.$root.ADMIN.id
     }
   },
   created () {
-    // this.$router.push('/host')
+    if (this.adminId !== 1) {
+      this.$notify({
+        title: '提示',
+        message: '您尚未登录,请登录',
+        type: 'warning',
+        duration: 5000
+      })
+      this.$router.push('/adminLogin')
+    }
   },
   methods: {
     toggleCollapse () {
@@ -71,6 +79,10 @@ export default {
     quit () {
       window.sessionStorage.clear()
       this.$router.push('/adminlogin')
+      // 刷新页面，删除vuex数据
+      setTimeout(() => {
+        window.location.reload()
+      }, 10)
     },
     change () {
       this.$router.push('/host')

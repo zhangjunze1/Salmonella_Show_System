@@ -29,6 +29,11 @@ const routes = [
     component: () => import('../views/AdminLogin.vue')
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login')
+  },
+  {
     path: '/adminMain',
     name: 'AdminMain',
     component: () => import('../views/adminSystem/adminMain.vue'),
@@ -47,6 +52,16 @@ const routes = [
         path: '/science',
         name: 'Science',
         component: () => import('../views/adminSystem/Science.vue')
+      },
+      {
+        path: '/invitationCode',
+        name: 'InvitationCode',
+        component: () => import('../views/adminSystem/InvitationCode.vue')
+      },
+      {
+        path: '/showCode',
+        name: 'ShowCode',
+        component: () => import('../views/adminSystem/ShowCode.vue')
       }]
   }
 ]

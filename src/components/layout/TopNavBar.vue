@@ -13,7 +13,7 @@
 <!--        </div>-->
         <div class="menus-item">
           <router-link to="/system">
-            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 10px">首页</span>
+            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: black;margin-right: 10px">首页</span>
           </router-link>
         </div>
 <!--        <div class="menus-item">-->
@@ -82,8 +82,8 @@
 <!--        </div>-->
         <div class="user-btn">
           <a v-if="avatar===''">
-            <router-link to="/home">
-            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 10px">登录</span>
+            <router-link to="/login">
+            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: black;margin-right: 10px">登录</span>
             </router-link>
           </a>
           <template v-else>

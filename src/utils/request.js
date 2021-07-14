@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // eslint-disable-next-line no-unused-vars
 const instance = axios.create({
-  baseURL: 'http://121.196.160.71:8085',
+  baseURL: 'http://1.117.153.199:8181',
   timeout: 2000
 })
 
