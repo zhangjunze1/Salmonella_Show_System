@@ -20,12 +20,12 @@
                     <div class="remember-wrap" style="margin-top: 19px;">
                       <div class="link-box">
                         <a class="link" target="_blank" @click="back">返回</a>
-                        <a class="link" style="margin-left: 40px" target="_blank" @click="toAdmin">详情概述</a>
+                        <a class="link" style="margin-left: 40px" target="_blank" @click="notice">详情概述</a>
                       </div>
                     </div>
                   </el-form-item>
-                  <el-form-item  >
-                    <el-button class="login-btn" @click="submitForm()">登录</el-button>
+                  <el-form-item>
+                    <el-button class="login-btn" @click="adminsubmitForm('loginForm')">登录</el-button>
                   </el-form-item>
                 </el-form>
               </div>
@@ -38,14 +38,14 @@
 </template>
 
 <script>
+import { adminLogin } from '../api/admin'
 export default {
   name: 'Login',
   data () {
     return {
       loginForm: {
         name: '',
-        password: '',
-        verifyCode: ''
+        password: ''
       },
       loginRules: {
         name: [
@@ -55,21 +55,71 @@ export default {
         password: [
           { required: true, message: '请输入登录密码', trigger: 'blur' },
           { min: 1, max: 16, message: '长度在 1 到 16 个字符', trigger: 'blur' }
-        ],
-        verifyCode: [
-          { required: true, message: '请输入计算结果', trigger: 'blur' }
         ]
       }
     }
   },
   methods: {
     back () {
-      this.$router.push('/login')
+      this.$router.back()
     },
-    submitForm () {
-      this.$root.ADMIN.id = 1
-      this.$root.ADMIN.name = 'admin'
-      this.$router.push('/adminMain')
+    async adminsubmitForm (loginForm) {
+      // eslint-disable-next-line no-unused-expressions
+      this.$refs[loginForm].validate(valid => {
+        if (!valid) {
+          this.$notify({
+            message: '请完整输入',
+            type: 'warning',
+            duration: 1200
+          })
+          return false
+        }
+      })
+      this.myadminlogin()
+    },
+    async myadminlogin () {
+      const { data } = await adminLogin(this.loginForm.name, this.loginForm.password)
+      if (data.code === 2003) {
+        this.$notify({
+          title: '警告',
+          message: '密码错误',
+          type: 'warning',
+          duration: 2000
+        })
+      } else if (data.code === 2007) {
+        this.$notify({
+          title: '警告',
+          message: '账号不存在',
+          type: 'warning',
+          duration: 2000
+        })
+      } else if (data.code === 2002) {
+        this.$notify({
+          title: '警告',
+          message: '非管理员账户',
+          type: 'warning',
+          duration: 2000
+        })
+      } else if (data.code === 200) {
+        this.$notify({
+          title: '成功',
+          message: '成功登录后台管理系统',
+          type: 'success',
+          duration: 2000
+        })
+        this.$root.ADMIN.id = 1
+        this.$root.ADMIN.name = 'admin'
+        this.$router.push('/adminMain')
+      }
+      console.log(data)
+    },
+    notice () {
+      this.$notify({
+        title: '后台管理系统详述',
+        message: '后台管理系统为管理员更新实验数据的系统，不对其余访问用户开放，深感抱歉！',
+        type: 'warning',
+        duration: 5000
+      })
     }
   }
 }

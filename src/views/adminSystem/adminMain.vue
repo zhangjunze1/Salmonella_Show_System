@@ -78,7 +78,7 @@ export default {
     },
     quit () {
       window.sessionStorage.clear()
-      this.$router.push('/adminlogin')
+      this.$router.push('/login')
       // 刷新页面，删除vuex数据
       setTimeout(() => {
         window.location.reload()

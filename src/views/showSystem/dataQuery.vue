@@ -3,7 +3,7 @@
     <div class="home-banner">
       <div class="banner-container">
         <p class="home-title" style="color: whitesmoke">
-          沙门氏杆菌展示系统
+          数据页
         </p>
         <!-- 联系方式 -->
         <div class="blog-contact animated zoomIn">
@@ -28,9 +28,9 @@
 </template>
 
 <script>
-import Footer from '../components/layout/Footer'
+import Footer from '../../components/layout/Footer'
 export default {
-  name: 'System',
+  name: 'dataQuery',
   // 注册组件
   components: {
     Footer
@@ -64,28 +64,28 @@ export default {
   font-size: 32px;
 }
 .home-banner {
-     position: absolute;
-     top: 0px;
-     left: 0;
-     right: 0;
-     height: 20vh;
-    /*  background: #EEEEEE;*/
-    /* background: url("../assets/img/system.jpg") center center /*/
-    /*cover no-repeat;*/
-     background-color: #1b2327;
-     background-attachment: fixed;
-     text-align: center;
-     color: #fff !important;
-     animation: header-effect 1s !important;
-   }
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  height: 20vh;
+  /*  background: #EEEEEE;*/
+  /* background: url("../assets/img/system.jpg") center center /*/
+  /*cover no-repeat;*/
+  background-color: #1b2327;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff !important;
+  animation: header-effect 1s !important;
+}
 .banner-container {
   margin-top: 8vh;
   line-height: 1.5;
   color: black;
 }
 .blog-contact a {
-     color: #fff !important;
-   }
+  color: #fff !important;
+}
 .scroll-down {
   cursor: pointer;
   position: absolute;
@@ -96,6 +96,6 @@ export default {
   font-size: 2rem;
 }
 body {
-  background: url("../assets/img/bg.png");
+  background: url("../../assets/img/bg.png");
 }
 </style>

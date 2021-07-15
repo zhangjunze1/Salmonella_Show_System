@@ -7,19 +7,19 @@
       <div class="item-login clear">
 <!--        左半部分-->
         <div class="login-content code-login" id="qrcode-login">
-          <p class="login-til">扫码登录</p>
+          <p class="login-til">获取邀请码途径</p>
           <div class="normal-wrap" id="qrcode-box">
             <div class="code-wrap">
               <img id="qrcode" style="height: 201px;width: 201px;border: #333333" src="../assets/img/wechat.jpg">
               <p class="tip-text" style="font-size: 14px;">
-                微信扫码
+                微信扫码,与管理员沟通获取邀请码
               </p>
             </div>
           </div>
         </div>
 <!--        右半部分-->
         <div class="login-content password-login" id="password-login">
-          <p class="login-til">密码登录</p>
+          <p class="login-til">阿斯托里研究机构</p>
           <el-form :model="loginForm" :rules="loginRules" style="margin-top: 46px" ref="loginForm" label- width="0px" class="login_form">
             <el-form-item prop="name">
               <el-input v-model="loginForm.name" placeholder="请输入账户" prefix-icon="el-icon-user-solid"></el-input>
@@ -36,8 +36,8 @@
                 </div>
               </div>
             </el-form-item>
-            <el-form-item  >
-              <el-button class="login-btn" @click="submitForm('loginForm')">登录</el-button>
+            <el-form-item>
+              <el-button class="login-btn" @click="systemSubmitForm('loginForm')">登录</el-button>
             </el-form-item>
           </el-form>
         </div>
@@ -50,14 +50,14 @@
 </template>
 
 <script>
+import { systemLogin } from '../api/system'
 export default {
   name: 'Login',
   data () {
     return {
       loginForm: {
         name: '',
-        password: '',
-        verifyCode: ''
+        password: ''
       },
       loginRules: {
         name: [
@@ -67,9 +67,6 @@ export default {
         password: [
           { required: true, message: '请输入登录密码', trigger: 'blur' },
           { min: 1, max: 16, message: '长度在 1 到 16 个字符', trigger: 'blur' }
-        ],
-        verifyCode: [
-          { required: true, message: '请输入计算结果', trigger: 'blur' }
         ]
       }
     }
@@ -81,8 +78,56 @@ export default {
     toInvite () {
       this.$router.push('/invite')
     },
-    toAdmin () {
-      this.$router.push('/adminLogin')
+    async systemSubmitForm (loginForm) {
+      // eslint-disable-next-line no-unused-expressions
+      this.$refs[loginForm].validate(valid => {
+        if (!valid) {
+          this.$notify({
+            message: '请完整输入',
+            type: 'warning',
+            duration: 1200
+          })
+          return false
+        }
+      })
+      this.mysystemlogin()
+    },
+    async mysystemlogin () {
+      const { data } = await systemLogin(this.loginForm.name, this.loginForm.password)
+      if (data.code === 2003) {
+        this.$notify({
+          title: '警告',
+          message: '密码错误',
+          type: 'warning',
+          duration: 2000
+        })
+      } else if (data.code === 2007) {
+        this.$notify({
+          title: '警告',
+          message: '账号不存在',
+          type: 'warning',
+          duration: 2000
+        })
+      } else if (data.code === 200) {
+        this.$notify({
+          title: '成功',
+          message: '成功登录沙门氏杆菌展示系统',
+          type: 'success',
+          duration: 2000
+        })
+        this.$root.USER.id = data.data.sysUser.userId
+        this.$root.USER.name = data.data.sysUser.userName
+        this.$root.USER.password = data.data.sysUser.password
+        this.$root.USER.invitationCode = data.data.sysUser.invitationCode
+        window.sessionStorage.setItem('id', data.data.sysUser.userId)
+        window.sessionStorage.setItem('name', data.data.sysUser.userName)
+        window.sessionStorage.setItem('password', data.data.sysUser.password)
+        window.sessionStorage.setItem('invitationCode', data.data.sysUser.invitationCode)
+        console.log(window.sessionStorage.getItem('id'))
+        this.$router.push('/system')
+        window.location.reload()
+      }
+      console.log(data)
     }
   }
 }

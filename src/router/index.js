@@ -29,6 +29,11 @@ const routes = [
     component: () => import('../views/AdminLogin.vue')
   },
   {
+    path: '/dataQuery',
+    name: 'dataQuery',
+    component: () => import('../views/showSystem/dataQuery.vue')
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login')

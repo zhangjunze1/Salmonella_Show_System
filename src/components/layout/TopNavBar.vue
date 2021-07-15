@@ -1,102 +1,55 @@
-<template>
+<template xmlns:text-decoration="http://www.w3.org/1999/xhtml">
   <div id="navClass" class="navClass" hide-on-scroll flat height="58">
     <!-- 电脑导航栏 -->
     <div class="d-md-block d-none nav-container">
-      <div class="float-left blog-title">
-<!--        <router-link to="/">-->
-<!--        </router-link>-->
-      </div>
+<!--      <div id="com-navigation" class="com-navigation">-->
+<!--        <div class="container" style="z-index: 400;">-->
+<!--&lt;!&ndash;          header栏&ndash;&gt;-->
+<!--          <ul class="nav-list clear">-->
+<!--&lt;!&ndash;            <li class="nav-li nav-li-menu">&ndash;&gt;-->
+<!--&lt;!&ndash;              <a href="javascript:void(0);" class="more-menu"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;              <ul class="slidedown-list" style="display: none;">&ndash;&gt;-->
+<!--&lt;!&ndash;                <li><a href="https://www.oray.com"><span>贝锐</span></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;              </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;            </li>&ndash;&gt;-->
+<!--&lt;!&ndash;            分隔符&ndash;&gt;-->
+<!--&lt;!&ndash;            <li class="nav-li nav-li-line"><a href="javascript:void(0);"></a></li>&ndash;&gt;-->
+<!--            <li class="nav-li">-->
+<!--              <a href="/system" aria-current="page" class="nav-logo-wrap">-->
+<!--                <span class="nav-logo"></span>-->
+<!--              </a>-->
+<!--            </li>-->
+<!--          </ul>-->
       <div class="float-right nav-title">
-<!--        <el-input v-model="queryString" v-if="searchFlag" style="float: top;width: 100px" placeholder="请输入内容"></el-input><i class="el-icon-circle-close" v-if="searchFlag" @click="closeSearch"></i>-->
-<!--        <div class="menus-item">-->
-<!--          <a @click="search"><i class="iconfont2 iconsousuo" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 15px">搜索</span></a>-->
-<!--        </div>-->
         <div class="menus-item">
           <router-link to="/system">
-            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: black;margin-right: 10px">首页</span>
+            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 10px">首页</span>
           </router-link>
         </div>
-<!--        <div class="menus-item">-->
-<!--          <router-link to="/discovery">-->
-<!--            <i class="el-icon-headset" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 10px">音乐盒</span>-->
-<!--          </router-link>-->
-<!--        </div>-->
-<!--        <div class="menus-item" @click="openRoom">-->
-<!--          <router-link to="">-->
-<!--            <i class="el-icon-chat-line-round" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 10px">聊天室</span>-->
-<!--          </router-link>-->
-<!--        </div>-->
-<!--        <div class="user-btn">-->
-<!--          <a>-->
-<!--            <i class="el-icon-s-operation" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 10px">类别</span>-->
-<!--            <ul class="user-submenu">-->
-<!--              <li>-->
-<!--                <router-link to="/types">-->
-<!--                  <i class="iconfont2 iconfenlei"/> 分类-->
-<!--                </router-link>-->
-<!--              </li>-->
-<!--              <li>-->
-<!--                <router-link to="/tags">-->
-<!--                  <i class="iconfont2 iconbiaoqian"/> 标签-->
-<!--                </router-link>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </a>-->
-<!--        </div>-->
-<!--        <div class="menus-item">-->
-<!--          <router-link to="/archives">-->
-<!--            <i class="iconfont2 iconguidang" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 10px">归档</span>-->
-<!--          </router-link>-->
-<!--        </div>-->
-<!--        <div class="menus-item">-->
-<!--          <router-link to="/link">-->
-<!--            <i class="iconfont2 iconlianjie" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 10px">友链</span>-->
-<!--          </router-link>-->
-<!--        </div>-->
-<!--        <div class="menus-item">-->
-<!--          <router-link to="/message">-->
-<!--            <i class="iconfont2 iconpinglunzu" style="color: whitesmoke"/> <span style="color: whitesmoke;margin-right: 10px">留言</span>-->
-<!--          </router-link>-->
-<!--        </div>-->
-<!--        <div class="user-btn">-->
-<!--          <a>-->
-<!--            <i class="el-icon-sugar" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 10px">后花园</span>-->
-<!--            <ul class="user-submenu">-->
-<!--              <li>-->
-<!--                <router-link to="/crawler">-->
-<!--                  <i class="el-icon-magic-stick"/> 爬虫-->
-<!--                </router-link>-->
-<!--              </li>-->
-<!--              <li>-->
-<!--                <router-link to="/AI">-->
-<!--                  <i class="user secret icon"/> AI-->
-<!--                </router-link>-->
-<!--              </li>-->
-<!--              <li>-->
-<!--                <router-link to="/about">-->
-<!--                  <i class="iconfont2 iconzhifeiji"/> 关于我-->
-<!--                </router-link>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </a>-->
-<!--        </div>-->
+        <div class="menus-item">
+          <router-link to="/dataQuery">
+            <i class="iconQueryData" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 10px">数据页</span>
+          </router-link>
+        </div>
         <div class="user-btn">
-          <a v-if="avatar===''">
+          <a v-if=" avatar===''">
             <router-link to="/login">
-            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: black;margin-right: 10px">登录</span>
+            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 10px">登录</span>
             </router-link>
           </a>
           <template v-else>
-            <img
-              class="user-avatar"
-              v-bind:src=this.avatar
-              height="30"
-              width="30"
-            />
+            <div style="margin-top: 0px">
+              <img
+                class="user-avatar"
+                src="../../assets/img/home.png"
+                height="20"
+                width="20"
+              />
+            </div>
             <ul class="user-submenu">
               <li>
-                <router-link to="/adminHome">
-                  <i class="iconfont2 icongerenzhongxin" /> 个人中心
+                <router-link to="/adminLogin">
+                  <i class="iconfont2 icongerenzhongxin" />后台管理
                 </router-link>
               </li>
 <!--              <li>-->
@@ -105,14 +58,16 @@
 <!--                </router-link>-->
 <!--              </li>-->
               <li>
-                <a @click="logout"><i class="iconfont2 icontuichu" /> 退出</a>
+                <a @click="logout"><i class="iconfont2 icontuichu" />退出系统</a>
               </li>
             </ul>
           </template>
         </div>
       </div>
-    </div>
-  </div>
+        </div>
+      </div>
+<!--    </div>-->
+<!--  </div>-->
 </template>
 
 <script>
@@ -135,24 +90,21 @@ export default {
       navClass: '',
       avatar: '',
       user: {},
+      if: '',
       queryString: ''
     }
   },
   methods: {
     logout () {
       window.sessionStorage.clear()
-      this.$root.USER.id = ''
-      this.$root.USER.name = ''
-      this.$root.USER.invitationCode = ''
       this.$router.push('/system')
       // 刷新页面，删除vuex数据
       window.location.reload()
     },
     getUser () {
-      this.user = window.sessionStorage.getItem('user')
-      if (this.user != null) {
-        this.nickname = JSON.parse(this.user).nickname
-        this.avatar = JSON.parse(this.user).avatar
+      this.id = window.sessionStorage.getItem('id')
+      if (this.id != null) {
+        this.avatar = this.id
       }
     }
   },
@@ -306,5 +258,171 @@ export default {
       filter: none;
       transform: translateY(0);
     }
+  }
+
+  .com-navigation, .com-navigation .container {
+    height: 64px;
+    line-height: 64px;
+    background: #1b2327;
+  }
+  .com-navigation {
+    position: relative;
+  }
+
+  .com-navigation, .com-navigation .container {
+    height: 64px;
+    line-height: 64px;
+    background: #1b2327;
+  }
+
+    .container {
+      width: 990px;
+    }
+
+  .container {
+    width: 1240px;
+    margin: 0 auto;
+  }
+
+  .com-navigation, .com-navigation .container {
+    height: 64px;
+    line-height: 64px;
+    background: #1b2327;
+  }
+
+  .com-navigation .nav-list {
+    float: left;
+    font-size: 0;
+  }
+  .clear {
+    clear: both;
+  }
+
+  .clear:after {
+      content: "\20";
+      display: block;
+      height: 0;
+      clear: both;
+    }
+  .com-navigation .nav-list .nav-li {
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    height: 64px;
+    line-height: 64px;
+    position: relative;
+  }
+  .com-navigation .nav-list {
+    float: left;
+    font-size: 0;
+  }
+
+  .com-navigation .nav-list .nav-li-menu .more-menu {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background: url(//res.orayimg.com/open/1.0/img/icon_menu.39b28d0.png) no-repeat 50%;
+    background-position: 0 0;
+    padding-left: 0;
+  }
+  .com-navigation .nav-list .nav-li-menu .slidedown-list {
+    width: 180px;
+  }
+
+  .com-navigation .nav-list .nav-li .slidedown-list {
+    overflow: hidden;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 99;
+    border-radius: 0 0 4px 4px;
+    min-width: 130px;
+    display: none;
+    padding: 8px 0;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  }
+  .com-navigation .nav-list .nav-li .slidedown-list li {
+    height: 40px;
+    line-height: 40px;
+  }
+  .com-navigation .nav-list .nav-li-menu .slidedown-list li a {
+    padding-left: 16px;
+  }
+  .com-navigation .nav-list .nav-li .slidedown-list li a {
+    color: #333;
+    padding-left: 16px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    position: relative;
+  }
+  .com-navigation .nav-list .nav-li-line {
+    position: relative;
+  }
+  .com-navigation .nav-list .nav-li {
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    height: 64px;
+    line-height: 64px;
+    position: relative;
+  }
+  .com-navigation .nav-list .nav-li-line:after {
+    content: "";
+    position: absolute;
+    top: 22.5px;
+    left: 50%;
+    margin-left: -.5px;
+    height: 20px;
+    width: 1px;
+    background: #ccc\9;
+    background: hsla(0,0%,100%,.2);
+  }
+  .com-navigation .nav-list .nav-li-line {
+    position: relative;
+  }
+  .com-navigation .nav-list .nav-li-line:after {
+    content: "";
+    position: absolute;
+    top: 22.5px;
+    left: 50%;
+    margin-left: -.5px;
+    height: 20px;
+    width: 1px;
+    background: #ccc\9;
+    background: hsla(0,0%,100%,.2);
+  }
+  .com-navigation .nav-list .nav-li {
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    height: 64px;
+    line-height: 64px;
+    position: relative;
+  }
+  .com-navigation .nav-list .nav-li a.active, .com-navigation .nav-list .nav-li a.nuxt-link-exact-active {
+    position: relative;
+    color: #339cff;
+  }
+
+  .com-navigation .nav-logo-wrap .nav-logo {
+    text-decoration:none;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(//res.orayimg.com/open/1.0/img/logo_developer.8b40e45.png) no-repeat;
+    background-position: 0 0;
+    margin-right: 8px;
+  }
+  .nav-logo-system {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../../assets/img/home.png) no-repeat;
+    background-position: 0 0;
+    margin-right: 8px;
   }
 </style>
