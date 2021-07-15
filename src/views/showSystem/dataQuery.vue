@@ -63,7 +63,7 @@
           </el-row>
         </el-form>
 
-        <ve-table :columns="columns" :table-data="tableData" />
+        <ve-table :columns="columns" :scroll-width="5000" :table-data="tableData" />
         <div class="table-pagination">
           <ve-pagination
             :total="totalCount"
@@ -173,6 +173,7 @@ export default {
   },
   created () {
     this.getSerotypeList()
+    this.getQuery()
   },
   methods: {
     // page number change
