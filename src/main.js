@@ -14,6 +14,9 @@ import axios from 'axios'
 // eslint-disable-next-line no-unused-vars
 import VueAMap from 'vue-amap'
 import BootstrapVue from 'bootstrap-vue'
+import 'vue-easytable/libs/theme-default/index.css' // import style
+import VueEasytable from 'vue-easytable' // import library
+
 import APlayer from '@moefe/vue-aplayer'
 Vue.use(APlayer, {
   defaultCover: 'https://github.com/u3u.png',
@@ -22,6 +25,7 @@ Vue.use(APlayer, {
 
 Vue.use(VueAMap)
 Vue.use(ElementUI)
+Vue.use(VueEasytable)
 Vue.use(BootstrapVue)
 Vue.prototype.$http = axios
 axios.withCredentials = true

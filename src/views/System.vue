@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="m-home">
-      <div class="ui container">
+      <div class="container">
 
       </div>
     </div>
@@ -57,7 +57,7 @@ export default {
 
 <style scoped>
 .m-home {
-  padding-top: 80vh !important;
+  padding-top: 90vh !important;
   padding-bottom: 0px !important;
 }
 .home-title {
@@ -97,5 +97,9 @@ export default {
 }
 body {
   background: url("../assets/img/bg.png");
+}
+.container {
+  width: 1240px;
+  margin: 0 auto;
 }
 </style>

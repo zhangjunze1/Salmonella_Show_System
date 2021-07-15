@@ -38,3 +38,41 @@ export const systemLogin = (name, password) => {
     }
   })
 }
+
+/**
+ * 获取初始数据参数
+ * @returns {AxiosPromise}
+ */
+export const findInitDataList = () => {
+  return request({
+    url: '/geneSequencing/getAllYearAndSerotypeAndProvince',
+    method: 'GET',
+    params: {
+    }
+  })
+}
+
+/**
+ * 获取查询检索数据
+ * @param current
+ * @param size
+ * @param year
+ * @param province
+ * @param serotype
+ * @param invitationCode
+ * @returns {AxiosPromise}
+ */
+export const findDataRetrievalList = (current, size, year, province, serotype, invitationCode) => {
+  return request({
+    url: '/geneSequencing/searchAllInformation',
+    method: 'POST',
+    params: {
+      current,
+      size,
+      year,
+      province,
+      serotype,
+      invitationCode
+    }
+  })
+}
