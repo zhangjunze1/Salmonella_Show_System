@@ -9,7 +9,7 @@
               <!--        右半部分-->
               <div class="login-content password-login" id="password-login">
                 <p class="login-til">邀请码注册</p>
-                <el-form :model="registerForm" :rules="registerRules" style="margin-top: 0.85185rem" ref="registerForm" label- width="0px" class="login_form">
+                <el-form :model="registerForm" :rules="registerRules" style="margin-top: 17.69%" ref="registerForm" label- width="0px" class="login_form">
                   <el-form-item prop="name">
                     <el-input v-model="registerForm.name" placeholder="请输入账户" prefix-icon="el-icon-user-solid"></el-input>
                   </el-form-item>
@@ -23,10 +23,10 @@
                     <el-input type="password" v-model="registerForm.invitationCode" placeholder="请输入正确的邀请码" prefix-icon="el-icon-c-scale-to-original"></el-input>
                   </el-form-item>
                   <el-form-item>
-                    <div class="remember-wrap" style="margin-top: 0.352rem;">
+                    <div class="remember-wrap" style="margin-top: 9%;">
                       <div class="link-box">
                         <a class="link" target="_blank" @click="back">返回</a>
-                        <a class="link" style="margin-left: 0.7407rem" target="_blank" @click="getNotice">详情概述</a>
+                        <a class="link" style="margin-left: 20%" target="_blank" @click="getNotice">详情概述</a>
                       </div>
                     </div>
                   </el-form-item>
@@ -154,26 +154,26 @@ export default {
 }
 
 .login-page .login-content {
-  height: 7.407rem;
+  height: 35%;
 }
 
 .login-page .login-content .login-box {
-  width: 14.815rem;
-  margin-left: -7.407rem;
+  width: 70%;
+  margin-left: -35%;
 }
 
 .login-page .login-content .login-box {
-  margin-top: -4.815rem;
+  margin-top: -44%;
 }
 
 .login-page .login-content .login-box {
   position: absolute;
   left: 50%;
-  margin-left: -4.074rem;
-  top: 50%;
-  margin-top: -5.0852rem;
-  width: 10rem;
-  height:9.6296rem;
+  margin-left: -14%;
+  top: 55%;
+  margin-top: -16%;
+  width: 28%;
+  height: 50%;
   display: block;
   box-shadow: 0 0.0926rem 0.556rem rgba(51,51,51,0.25);
 }
@@ -190,14 +190,14 @@ export default {
   position: absolute;
   z-index: 12;
   left: 100%;
-  top: 1.111rem;
-  bottom: 1.111rem;
-  width: 0.0185rem;
+  top: 10%;
+  bottom: 10%;
+  width: 3%;
   background: #e1e1e1;
   margin-left: -0.0185rem;
 }
 .login-wrap .item-login {
-  width: 5.556rem;
+  width: 55%;
 }
 
 .item-login {
@@ -224,19 +224,19 @@ export default {
   display: inline-block;
   font-size: 14px;
   float: left;
-  width: 5.556rem;
+  width: 55%;
 }
 
 .login-wrap .login-content .login-til {
   font-size: 24px;
-  line-height: 0.778rem;
+  line-height: 2.5%;
   color: #333;
-  margin-top: 0.278rem;
-  margin-bottom: -0.278rem;
+  margin-top: 2%;
+  margin-bottom: -2%;
 }
 .login-wrap .code-login .normal-wrap .code-wrap {
-  width: 3.722rem;
-  height: 3.722rem;
+  width: 25%;
+  height: 10%;
   margin: 0 auto;
   margin-top: 0.556rem;
   border: 0.0185rem solid #e0e0e0;
@@ -244,7 +244,7 @@ export default {
 }
 
 .login-wrap .link-box .link {
-  margin-left: 0.0926rem;
+  margin-left: 1%;
 }
 
 .login-wrap .link {
@@ -253,8 +253,8 @@ export default {
 
 .login-wrap .code-login .tip-text {
   color: #333;
-  line-height: 0.667rem;
-  margin-top: 0.1852rem;
+  line-height: 3%;
+  margin-top: 2%;
   font-size: 13px!important;
 }
 
@@ -268,22 +268,22 @@ export default {
   display: inline-block;
   font-size: 14px;
   float: left;
-  width: 5.556rem;
+  width: 100%;
 }
 
 .login-wrap .login-content .login-til {
   font-size: 24px;
-  line-height: 0.778rem;
+  line-height: 100%;
   color: #333;
-  margin-top: 0.278rem;
-  margin-bottom: -0.278rem;
+  margin-top: 10%;
+  margin-bottom: -6%;
 }
 
 .login-wrap .remember-wrap {
   text-align: left;
-  height: 0.333rem;
+  height: 100%;
   line-height: 0px;
-  margin-top: 0.352rem;
+  margin-top: 10%;
   font-size: 0.222rem;
   color: #6b6b6b;
 }
@@ -292,13 +292,13 @@ export default {
   *display: inline;
   *zoom: 1;
   display: block;
-  width: 3.703rem;
+  width: 100%;
   height: 0.778rem;
   background: #ff0042;
   border-radius: 0.5rem;
   color: #fff;
   font-size: 0.333rem;
-  line-height: 0.296rem;
+  line-height: 100%;
   text-align: center;
   position: absolute;
   top: 0px;

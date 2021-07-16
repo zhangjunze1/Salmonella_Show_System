@@ -9,7 +9,7 @@
       <div class="float-right nav-title">
         <div class="menus-item">
           <router-link to="/adminLogin">
-            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: black;margin-right: 0.3704rem">后台管理系统</span>
+            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: black;margin-right: 1.04%">后台管理系统</span>
           </router-link>
         </div>
       </div>
@@ -47,9 +47,9 @@ export default {
   .navClass{
     /*position:fixed; !* 绝对定位，fixed是相对于浏览器窗口定位。 *!*/
     position: relative;
-    top:0.278rem; /* 距离窗口顶部距离 */
-    right: 22px;
-    height:0.1852rem; /* 高度 */
+    top:3%; /* 距离窗口顶部距离 */
+    right: 2%;
+    height: 1%; /* 高度 */
     float: right;
     z-index:99; /* 层叠顺序，数值越大就越高。页面滚动的时候就不会被其他内容所遮挡。 */
   }

@@ -5,22 +5,33 @@
         <p class="home-title" style="color: whitesmoke">
           沙门氏杆菌展示系统
         </p>
-        <!-- 联系方式 -->
-        <div class="blog-contact animated zoomIn">
-          <a class="github circular icon button" data-content="https://github.com/zhangjunze1/salmonella_show_system" data-position="bottom center" style="margin-right: 0.9259rem"><i class="github icon"></i></a>
-          <a class="wechat circular icon button" style="margin-right: 0.925rem"><i class="weixin icon"></i></a>
-          <a class="qq circular icon button" data-content="412057605" data-position="bottom center"><i class="qq icon"></i></a>
-        </div>
-
-        <!-- 向下滚动 -->
-        <div class="scroll-down" @click="scrollDown">
-          <h4><i class="el-icon-arrow-down" style="color: whitesmoke"></i></h4>
-        </div>
+<!--        &lt;!&ndash; 向下滚动 &ndash;&gt;-->
+<!--        <div class="scroll-down" @click="scrollDown">-->
+<!--          <h4><i class="el-icon-arrow-down" style="color: whitesmoke"></i></h4>-->
+<!--        </div>-->
       </div>
     </div>
     <div class="m-home">
       <div class="container">
-
+        <div class="row" >
+          <div class="col-md-10">
+            <div class="ibox-title" style="width: 95%; height: 16.67%;">
+              <p class="home-title">研究菌群概述</p>
+              <p style="text-align: left;margin-top: -5.10%;font-size: 0.3rem">沙门氏菌属（Salmonella）是一大群寄生于人类和动物肠道内生化反应和抗原构造相似的革兰氏阴性杆菌。本展示系统旨在通过将沙门杆菌不同的血清种类抗生素的研究实现基本的年、省、血清种类等信息的数据库检索和实现数据库内菌株的采样宿主、血清型、菌株的分布情况的可视化功能。</p>
+            </div>
+<!--&lt;!&ndash;            左一&ndash;&gt;-->
+          </div>
+        </div>
+        <div class="row" >
+          <div class="col-md-5">
+            <div class="ibox float-e-margins">
+              <div class="ibox-title" style="width: 47%;height: 31.375%;margin-top: 1%">
+                <p class="home-title">访客地图</p>
+                <a href="https://clustrmaps.com/site/1biyz" title="Visit tracker"><img style="margin-top: -9%" src="//clustrmaps.com/map_v2.png?cl=080808&w=500&t=m&d=83coUy6Rxh1QXy69RFx_WvfA4T_pf1vCwg7k3KvHIcI&co=ffffff&ct=808080" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <Footer></Footer>
@@ -57,18 +68,18 @@ export default {
 
 <style scoped>
 .m-home {
-  padding-top: 23vh !important;
+  padding-top: 5% !important;
   padding-bottom: 0px !important;
 }
 .home-title {
-  font-size: 0.592rem;
+  font-size: 20px;
 }
 .home-banner {
      position: absolute;
-     top: 0px;
+     top: 0;
      left: 0;
      right: 0;
-     height: 20vh;
+     height: 5%;
     /*  background: #EEEEEE;*/
     /* background: url("../assets/img/system.jpg") center center /*/
     /*cover no-repeat;*/
@@ -79,7 +90,7 @@ export default {
      animation: header-effect 1s !important;
    }
 .banner-container {
-  margin-top: 8vh;
+  margin-top: 0.5%;
   line-height: 1.5;
   color: black;
 }
@@ -89,7 +100,7 @@ export default {
 .scroll-down {
   cursor: pointer;
   position: absolute;
-  bottom: -0.7rem;
+  bottom: -3.958%;
   width: 100%;
 }
 .scroll-down i {
@@ -99,7 +110,52 @@ body {
   background: url("../assets/img/bg.png");
 }
 .container {
-  width: 23.14rem;
-  margin: 0 auto;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  padding-right: 0%;
+  padding-left: 5%;
+}
+
+.col-md-10 {
+  position: relative;
+  min-height: 10%;
+  padding-right: 0%;
+  width: 100%;
+  box-shadow: 0 0.0825rem 0.556rem rgba(51,51,51,0.25);
+}
+
+.ibox-title {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #ffffff;
+  border-color: #e7eaec;
+  -webkit-border-image: none;
+  -o-border-image: none;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 0 0 0;
+  color: inherit;
+  margin-bottom: 0;
+  padding: 0.7% 0.7% 0.5%;
+  min-height: 0.889rem;
+}
+
+.ibox {
+  clear: both;
+  margin-bottom: 0.7%;
+  margin-top: 0;
+  padding: 0;
+}
+.col-md-5 {
+  position: relative;
+  min-height: 10%;
+  padding-right: 0%;
+  width: 100%;
+  box-shadow: 0 0.0825rem 0.556rem rgba(51,51,51,0.25);
 }
 </style>

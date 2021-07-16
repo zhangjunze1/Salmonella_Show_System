@@ -1,7 +1,7 @@
 <template>
   <el-footer app padless absolute>
     <div class="footer-wrap">
-      <div>&copy; Copyright 2021 zhangjz工作室 | 浙大城市学院</div>
+      <div>&copy; 2021 zhangjz工作室 | 浙大城市学院</div>
     </div>
   </el-footer>
 </template>
@@ -15,7 +15,7 @@
     width: 97%;
     line-height: 1;
     position: absolute;;
-    padding: 0.556rem 0.3704rem;
+    padding: 0.5% 1.7%;
     color: black;
     font-size: 0.296rem;
     text-align: center;

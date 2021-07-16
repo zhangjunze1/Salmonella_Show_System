@@ -23,22 +23,22 @@
       <div class="float-right nav-title">
         <div class="menus-item">
           <router-link to="/system">
-            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 0.1852rem">首页</span>
+            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 1.04%">首页</span>
           </router-link>
         </div>
         <div class="menus-item">
           <router-link to="/dataQuery">
-            <i class="iconQueryData" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 0.1852rem">数据页</span>
+            <i class="iconQueryData" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 1.04%">数据页</span>
           </router-link>
         </div>
         <div class="user-btn">
           <a v-if=" avatar===''">
             <router-link to="/login">
-            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 0.1852rem">登录</span>
+            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 1.04%">登录</span>
             </router-link>
           </a>
           <template v-else>
-            <div style="margin-top: 0px">
+            <div style="margin-top: 0%">
               <img
                 class="user-avatar"
                 src="../../assets/img/home.png"
@@ -118,11 +118,11 @@ export default {
   .navClass{
     /*position:fixed; !* 绝对定位，fixed是相对于浏览器窗口定位。 *!*/
     position: relative;
-    top:0.278rem; /* 距离窗口顶部距离 */
-    right: 22px;
-    height:0.1852rem; /* 高度 */
+    top: 3%; /* 距离窗口顶部距离 */
+    right: 2%;
+    height: 1%; /* 高度 */
     float: right;
-    z-index:99; /* 层叠顺序，数值越大就越高。页面滚动的时候就不会被其他内容所遮挡。 */
+    z-index: 99; /* 层叠顺序，数值越大就越高。页面滚动的时候就不会被其他内容所遮挡。 */
   }
   i {
     margin-right: 4px;
@@ -224,7 +224,7 @@ export default {
     display: none;
     right: 0;
     width: max-content;
-    margin-top: 0.148rem;
+    margin-top: 1.5%;
     box-shadow: 0 0.0926rem 0.3704rem -4px rgba(0, 0, 0, 0.5);
     background-color: #fff;
     animation: submenu 0.3s 0.1s ease both;
@@ -234,7 +234,7 @@ export default {
     top: -0.148rem;
     left: 0;
     width: 100%;
-    height: 0.3704rem;
+    height: 1.5%;
     content: "";
   }
   .user-submenu a {
@@ -320,8 +320,8 @@ export default {
   .com-navigation .nav-list .nav-li-menu .more-menu {
     display: inline-block;
     vertical-align: middle;
-    width: 0.3704rem;
-    height: 0.3704rem;
+    width: 1.5%;
+    height: 1.5%;
     background: url(//res.orayimg.com/open/1.0/img/icon_menu.39b28d0.png) no-repeat 50%;
     background-position: 0 0;
     padding-left: 0;
@@ -375,7 +375,7 @@ export default {
     position: absolute;
     top: 22.5px;
     left: 50%;
-    margin-left: -.0.0926rem;
+    margin-left: -0.0926rem;
     height: 0.3704rem;
     width: 0.0185rem;
     background: #ccc\9;
@@ -389,7 +389,7 @@ export default {
     position: absolute;
     top: 22.5px;
     left: 50%;
-    margin-left: -.0.0926rem;
+    margin-left: -0.0926rem;
     height: 0.3704rem;
     width: 0.0185rem;
     background: #ccc\9;

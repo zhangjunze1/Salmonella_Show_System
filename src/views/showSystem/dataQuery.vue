@@ -5,17 +5,17 @@
         <p class="home-title" style="color: whitesmoke">
           数据页
         </p>
-        <!-- 联系方式 -->
-        <div class="blog-contact animated zoomIn">
-          <a class="github circular icon button" data-content="https://github.com/zhangjunze1/salmonella_show_system" data-position="bottom center" style="margin-right: 0.9259rem"><i class="github icon"></i></a>
-          <a class="wechat circular icon button" style="margin-right: 0.9259rem"><i class="weixin icon"></i></a>
-          <a class="qq circular icon button" data-content="412057605" data-position="bottom center"><i class="qq icon"></i></a>
-        </div>
+<!--        &lt;!&ndash; 联系方式 &ndash;&gt;-->
+<!--        <div class="blog-contact animated zoomIn">-->
+<!--          <a class="github circular icon button" data-content="https://github.com/zhangjunze1/salmonella_show_system" data-position="bottom center" style="margin-right: 0.9259rem"><i class="github icon"></i></a>-->
+<!--          <a class="wechat circular icon button" style="margin-right: 0.9259rem"><i class="weixin icon"></i></a>-->
+<!--          <a class="qq circular icon button" data-content="412057605" data-position="bottom center"><i class="qq icon"></i></a>-->
+<!--        </div>-->
 
-        <!-- 向下滚动 -->
-        <div class="scroll-down" @click="scrollDown">
-          <h4><i class="el-icon-arrow-down" style="color: whitesmoke"></i></h4>
-        </div>
+<!--        &lt;!&ndash; 向下滚动 &ndash;&gt;-->
+<!--        <div class="scroll-down" @click="scrollDown">-->
+<!--          <h4><i class="el-icon-arrow-down" style="color: whitesmoke"></i></h4>-->
+<!--        </div>-->
       </div>
     </div>
 
@@ -56,14 +56,23 @@
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item style="margin-left: 0.1rem"  >
+            <el-form-item style="margin-left: 1.5%"  >
               <el-button icon="el-icon-refresh" @click="resetForm">重置</el-button>
               <el-button icon="el-icon-search" @click="getQuery">查询</el-button>
             </el-form-item>
           </el-row>
         </el-form>
 
-        <ve-table :columns="columns" :scroll-width="5000" :table-data="tableData" />
+        <ve-table
+          :columns="columns"
+          :row-style-option="rowStyleOption"
+          :cell-selection-option="cellSelectionOption"
+          rowKeyFieldName="id"
+          :scroll-width="5000"
+          :border-around="true"
+          :border-x="false"
+          :border-y="true"
+          :table-data="tableData"/>
         <div class="table-pagination">
           <ve-pagination
             :total="totalCount"
@@ -101,6 +110,14 @@ export default {
       // page index
       pageIndex: 1,
       totalCount: 100,
+      rowStyleOption: {
+        stripe: true,
+        hoverHighlight: true
+      },
+      cellSelectionOption: {
+        // default true
+        enable: true
+      },
       // page size
       pageSize: 10,
       columns: [
@@ -228,18 +245,19 @@ export default {
 
 <style scoped>
 .m-home {
-  padding-top: 23vh !important;
+  padding-top: 5% !important;
   padding-bottom: 0px !important;
+  width: 100%;
 }
 .home-title {
-  font-size: 0.592rem;
+  font-size: 20px;
 }
 .home-banner {
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
   right: 0;
-  height: 20vh;
+  height: 5%;
   /*  background: #EEEEEE;*/
   /* background: url("../assets/img/system.jpg") center center /*/
   /*cover no-repeat;*/
@@ -250,9 +268,10 @@ export default {
   animation: header-effect 1s !important;
 }
 .banner-container {
-  margin-top: 8vh;
+  margin-top: 0.5%;
   line-height: 1.5;
   color: black;
+  width: 100%;
 }
 .blog-contact a {
   color: #fff !important;
@@ -260,7 +279,7 @@ export default {
 .scroll-down {
   cursor: pointer;
   position: absolute;
-  bottom: -0.7rem;
+  bottom: -3.958%;
   width: 100%;
 }
 .scroll-down i {
@@ -271,18 +290,17 @@ body {
 }
 
 .container {
-  width: 22.963rem;
-  margin: 0 auto;
+  width: 100%;
 }
 .page-index .section-title {
   font-size: 0.556rem;
   color: #333;
   letter-spacing: 0.574rem;
   text-align: center;
-  line-height: 0.667rem;
+  line-height: 3%;
 }
 .table-pagination {
-  margin-top: 0.3704rem;
+  margin-top: 3%;
   text-align: right;
 }
 </style>
