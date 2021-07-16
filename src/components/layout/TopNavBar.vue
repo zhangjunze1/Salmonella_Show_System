@@ -23,18 +23,18 @@
       <div class="float-right nav-title">
         <div class="menus-item">
           <router-link to="/system">
-            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 1.04%">首页</span>
+            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 1.04%">HOME</span>
           </router-link>
         </div>
         <div class="menus-item">
           <router-link to="/dataQuery">
-            <i class="iconQueryData" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 1.04%">数据页</span>
+            <i class="iconQueryData" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 1.04%">Data Retrieval</span>
           </router-link>
         </div>
         <div class="user-btn">
           <a v-if=" avatar===''">
             <router-link to="/login">
-            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 1.04%">登录</span>
+            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 1.04%">Login</span>
             </router-link>
           </a>
           <template v-else>

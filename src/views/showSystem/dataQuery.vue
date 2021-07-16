@@ -62,17 +62,19 @@
             </el-form-item>
           </el-row>
         </el-form>
-
+        <!--          :scroll-width="5000"-->
         <ve-table
           :columns="columns"
           :row-style-option="rowStyleOption"
           :cell-selection-option="cellSelectionOption"
           rowKeyFieldName="id"
-          :scroll-width="5000"
           :border-around="true"
           :border-x="false"
           :border-y="true"
-          :table-data="tableData"/>
+          :table-data="tableData"
+          row-key-field-name="id"
+          :checkbox-option="checkboxOption"
+          />
         <div class="table-pagination">
           <ve-pagination
             :total="totalCount"
@@ -120,6 +122,16 @@ export default {
       },
       // page size
       pageSize: 10,
+      checkboxOption: {
+        // row select change event
+        selectedRowChange: ({ row, isSelected, selectedRowKeys }) => {
+          console.log(row, isSelected, selectedRowKeys)
+        },
+        // selected all change event
+        selectedAllChange: ({ isSelected, selectedRowKeys }) => {
+          console.log(isSelected, selectedRowKeys)
+        }
+      },
       columns: [
         { field: 'id', key: 'a', title: 'id', align: 'center' },
         { field: 'name', key: 'b', title: 'name', align: 'center' },
@@ -268,6 +280,7 @@ export default {
   animation: header-effect 1s !important;
 }
 .banner-container {
+  min-height: 100%;
   margin-top: 0.5%;
   line-height: 1.5;
   color: black;

@@ -29,8 +29,23 @@
     </el-transfer>
     <br>
     <row>
-      <el-button type="primary" size="mini" @click="getInvitationCode()">生成邀请码</el-button>
-      <p>生成的邀请码是：{{this.code}}</p>
+      <div style="display: inline" >
+        <el-tooltip :content="'Switch value: ' + value" placement="top">
+        <el-switch
+          style="display: block"
+          v-model="value"
+          active-color="#13ce66"
+          inactive-color="#ff4949"
+          active-text="数据权限开放"
+          active-value="yes"
+          inactive-text="遮盖部分数据权限"
+          inactive-value="no"
+        >
+        </el-switch>
+        </el-tooltip>
+        <el-button style="margin-top: 10px;" type="primary" size="mini" @click="getInvitationCode()">生成邀请码</el-button>
+        <p style="margin-top: 10px">生成的邀请码是：{{this.code}}</p>
+      </div>
     </row>
   </div>
 </template>
@@ -106,6 +121,7 @@ export default {
       return data
     }
     return {
+      value: 'yes',
       data: generateData(),
       temp: '',
       code: '',
@@ -133,7 +149,7 @@ export default {
       console.log(this.temp)
     },
     async getInvitationCode () {
-      const confirmResult = await this.$confirm('是否将根据当前省份生成邀请码?', '提示', {
+      const confirmResult = await this.$confirm('是否根据当前省份权限生成邀请码，同时将数据权限调为<' + this.value + '>?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
@@ -148,7 +164,7 @@ export default {
       this.provinces.forEach((item, index) => {
         this.temp = this.temp + ',' + item
       })
-      const { data } = await applyForCode(this.temp)
+      const { data } = await applyForCode(this.temp, this.value)
       if (data.code === 200) {
         this.code = data.data.inviteCode
         this.$notify({

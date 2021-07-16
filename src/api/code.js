@@ -4,15 +4,17 @@ import request from '../utils/request'
 /**
  * 申请二维码
  * @param provinces
+ * @param value
  * @returns {AxiosPromise}
  */
-export const applyForCode = (provinces) => {
+export const applyForCode = (provinces, value) => {
   return request({
     url: '/sysUser/productInvite',
     method: 'GET',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     params: {
-      provinces
+      provinces,
+      value
     }
   })
 }

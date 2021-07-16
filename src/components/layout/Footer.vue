@@ -14,7 +14,7 @@
     bottom: 0!important;
     width: 97%;
     line-height: 1;
-    position: absolute;;
+    position: absolute;
     padding: 0.5% 1.7%;
     color: black;
     font-size: 0.296rem;

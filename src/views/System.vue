@@ -22,12 +22,20 @@
 <!--&lt;!&ndash;            左一&ndash;&gt;-->
           </div>
         </div>
-        <div class="row" >
+        <div class="row" style="margin-top: 2%">
           <div class="col-md-5">
             <div class="ibox float-e-margins">
-              <div class="ibox-title" style="width: 47%;height: 31.375%;margin-top: 1%">
-                <p class="home-title">访客地图</p>
-                <a href="https://clustrmaps.com/site/1biyz" title="Visit tracker"><img style="margin-top: -9%" src="//clustrmaps.com/map_v2.png?cl=080808&w=500&t=m&d=83coUy6Rxh1QXy69RFx_WvfA4T_pf1vCwg7k3KvHIcI&co=ffffff&ct=808080" /></a>
+              <div class="ibox-title" style="width: 47%;height: 31.375%;margin-top: 3%">
+                <p class="home-title">Visit Map</p>
+                <a href="https://clustrmaps.com/site/1biyz" title="Visit tracker"><img style="margin-top: -9%;" src="//clustrmaps.com/map_v2.png?cl=080808&w=500&t=m&d=83coUy6Rxh1QXy69RFx_WvfA4T_pf1vCwg7k3KvHIcI&co=ffffff&ct=808080" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5" style="margin-left: 4%">
+            <div class="ibox float-e-margins">
+              <div class="ibox-title" style="width: 47%;height: 31.375%;margin-top: 3%">
+                <p class="home-title">Data Retrieval</p>
+                <a href="http://localhost:8080/#/dataQuery" title="Data Retrieval"><img style="margin-top: -9%;" src="../assets/img/data.png" /></a>
               </div>
             </div>
           </div>
@@ -155,7 +163,7 @@ body {
   position: relative;
   min-height: 10%;
   padding-right: 0%;
-  width: 100%;
+  width: 48%;
   box-shadow: 0 0.0825rem 0.556rem rgba(51,51,51,0.25);
 }
 </style>
