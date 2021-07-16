@@ -7,8 +7,8 @@
         </p>
         <!-- 联系方式 -->
         <div class="blog-contact animated zoomIn">
-          <a class="github circular icon button" data-content="https://github.com/zhangjunze1/salmonella_show_system" data-position="bottom center" style="margin-right: 50px"><i class="github icon"></i></a>
-          <a class="wechat circular icon button" style="margin-right: 50px"><i class="weixin icon"></i></a>
+          <a class="github circular icon button" data-content="https://github.com/zhangjunze1/salmonella_show_system" data-position="bottom center" style="margin-right: 0.9259rem"><i class="github icon"></i></a>
+          <a class="wechat circular icon button" style="margin-right: 0.9259rem"><i class="weixin icon"></i></a>
           <a class="qq circular icon button" data-content="412057605" data-position="bottom center"><i class="qq icon"></i></a>
         </div>
 
@@ -24,7 +24,7 @@
         <p class="home-title" style="color: black;text-align: center">
           Data Retrieval
         </p>
-        <el-form ref="form" :model="form" label-width="110px" size="mini" >
+        <el-form ref="form" :model="form" label-width="2.037rem" size="mini" >
           <el-row type="flex" justify="start">
             <el-form-item prop="Serotype" label="Serotype:">
               <el-select v-model="form.Serotype">
@@ -56,7 +56,7 @@
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item style="margin-left: 10px"  >
+            <el-form-item style="margin-left: 0.1rem"  >
               <el-button icon="el-icon-refresh" @click="resetForm">重置</el-button>
               <el-button icon="el-icon-search" @click="getQuery">查询</el-button>
             </el-form-item>
@@ -232,7 +232,7 @@ export default {
   padding-bottom: 0px !important;
 }
 .home-title {
-  font-size: 32px;
+  font-size: 0.592rem;
 }
 .home-banner {
   position: absolute;
@@ -260,29 +260,29 @@ export default {
 .scroll-down {
   cursor: pointer;
   position: absolute;
-  bottom: 0;
+  bottom: -0.7rem;
   width: 100%;
 }
 .scroll-down i {
-  font-size: 2rem;
+  font-size: 0.75rem;
 }
 body {
   background: url("../../assets/img/bg.png");
 }
 
 .container {
-  width: 1240px;
+  width: 22.963rem;
   margin: 0 auto;
 }
 .page-index .section-title {
-  font-size: 30px;
+  font-size: 0.556rem;
   color: #333;
-  letter-spacing: .31px;
+  letter-spacing: 0.574rem;
   text-align: center;
-  line-height: 36px;
+  line-height: 0.667rem;
 }
 .table-pagination {
-  margin-top: 20px;
+  margin-top: 0.3704rem;
   text-align: right;
 }
 </style>

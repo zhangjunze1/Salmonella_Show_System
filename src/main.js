@@ -7,12 +7,14 @@ import store from './store'
 import './assets/css/global.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'lib-flexible'
 // eslint-disable-next-line no-unused-vars
 import $ from 'jquery'
 // eslint-disable-next-line no-unused-vars
 import axios from 'axios'
 // eslint-disable-next-line no-unused-vars
 import VueAMap from 'vue-amap'
+
 import BootstrapVue from 'bootstrap-vue'
 import 'vue-easytable/libs/theme-default/index.css' // import style
 import VueEasytable from 'vue-easytable' // import library

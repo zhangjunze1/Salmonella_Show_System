@@ -3,7 +3,7 @@
     <div>
       <!--面包屑-->
       <el-breadcrumb separator-class="el-icon-arrow-right"
-                     style="padding-left: 10px;padding-bottom: 10px;font-size: 12px">
+                     style="padding-left: 0.1852rem;padding-bottom: 0.1852rem;font-size: 0.222rem">
         <el-breadcrumb-item>首页</el-breadcrumb-item>
         <el-breadcrumb-item>邀请码</el-breadcrumb-item>
         <el-breadcrumb-item>邀请码生成</el-breadcrumb-item>
@@ -12,10 +12,10 @@
 <!--    <div class="box">-->
 <!--      <div class="column">-->
 <!--          <span class="item">-->
-<!--            <div :id="'reg'" style="width: 800px; height: 400px; background-color: #FFFFFF"/>-->
+<!--            <div :id="'reg'" style="width: 14.815rem; height: 7.407rem; background-color: #FFFFFF"/>-->
 <!--          </span>-->
 <!--        <span class="item">-->
-<!--            <div :id="'end'" style="width: 800px; height: 400px; background-color: #FFFFFF"/>-->
+<!--            <div :id="'end'" style="width: 14.815rem; height: 7.407rem; background-color: #FFFFFF"/>-->
 <!--          </span>-->
 <!--      </div>-->
 <!--    </div>-->

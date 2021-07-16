@@ -23,18 +23,18 @@
       <div class="float-right nav-title">
         <div class="menus-item">
           <router-link to="/system">
-            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 10px">首页</span>
+            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 0.1852rem">首页</span>
           </router-link>
         </div>
         <div class="menus-item">
           <router-link to="/dataQuery">
-            <i class="iconQueryData" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 10px">数据页</span>
+            <i class="iconQueryData" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: 0.1852rem">数据页</span>
           </router-link>
         </div>
         <div class="user-btn">
           <a v-if=" avatar===''">
             <router-link to="/login">
-            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 10px">登录</span>
+            <i class="iconfont2 icondenglu" style="color: whitesmoke"/><span style="color: whitesmoke;margin-right: 0.1852rem">登录</span>
             </router-link>
           </a>
           <template v-else>
@@ -118,9 +118,9 @@ export default {
   .navClass{
     /*position:fixed; !* 绝对定位，fixed是相对于浏览器窗口定位。 *!*/
     position: relative;
-    top:15px; /* 距离窗口顶部距离 */
+    top:0.278rem; /* 距离窗口顶部距离 */
     right: 22px;
-    height:10px; /* 高度 */
+    height:0.1852rem; /* 高度 */
     float: right;
     z-index:99; /* 层叠顺序，数值越大就越高。页面滚动的时候就不会被其他内容所遮挡。 */
   }
@@ -144,7 +144,7 @@ export default {
   }
   .theme--light.nav-fixed {
     background: rgba(255, 255, 255, 0.8) !important;
-    box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0.6);
+    box-shadow: 0 0.0926rem 6px -0.0926rem rgba(133, 133, 133, 0.6);
   }
   .theme--dark.nav-fixed {
     background: rgba(18, 18, 18, 0.8) !important;
@@ -177,7 +177,7 @@ export default {
     height: 100%;
   }
   .blog-title a {
-    font-size: 18px;
+    font-size: 0.333rem;
     font-weight: bold;
   }
   .user-btn,
@@ -200,11 +200,11 @@ export default {
   }
   .menus-item a:after {
     position: absolute;
-    bottom: -5px;
+    bottom: -0.0926rem;
     left: 0;
     z-index: -1;
     width: 0;
-    height: 3px;
+    height: 0.0556rem;
     background-color: #80c8f8;
     content: "";
     transition: all 0.3s ease-in-out;
@@ -224,17 +224,17 @@ export default {
     display: none;
     right: 0;
     width: max-content;
-    margin-top: 8px;
-    box-shadow: 0 5px 20px -4px rgba(0, 0, 0, 0.5);
+    margin-top: 0.148rem;
+    box-shadow: 0 0.0926rem 0.3704rem -4px rgba(0, 0, 0, 0.5);
     background-color: #fff;
     animation: submenu 0.3s 0.1s ease both;
   }
   .user-submenu:before {
     position: absolute;
-    top: -8px;
+    top: -0.148rem;
     left: 0;
     width: 100%;
-    height: 20px;
+    height: 0.3704rem;
     content: "";
   }
   .user-submenu a {
@@ -251,7 +251,7 @@ export default {
     0% {
       opacity: 0;
       filter: alpha(opacity=0);
-      transform: translateY(10px);
+      transform: translateY(0.1852rem);
     }
     100% {
       opacity: 1;
@@ -261,8 +261,8 @@ export default {
   }
 
   .com-navigation, .com-navigation .container {
-    height: 64px;
-    line-height: 64px;
+    height: 1.185rem;
+    line-height: 1.185rem;
     background: #1b2327;
   }
   .com-navigation {
@@ -270,8 +270,8 @@ export default {
   }
 
   .com-navigation, .com-navigation .container {
-    height: 64px;
-    line-height: 64px;
+    height: 1.185rem;
+    line-height: 1.185rem;
     background: #1b2327;
   }
 
@@ -280,13 +280,13 @@ export default {
     }
 
   .container {
-    width: 1240px;
+    width: 22.963rem;
     margin: 0 auto;
   }
 
   .com-navigation, .com-navigation .container {
-    height: 64px;
-    line-height: 64px;
+    height: 1.185rem;
+    line-height: 1.185rem;
     background: #1b2327;
   }
 
@@ -308,8 +308,8 @@ export default {
     display: inline-block;
     float: left;
     font-size: 14px;
-    height: 64px;
-    line-height: 64px;
+    height: 1.185rem;
+    line-height: 1.185rem;
     position: relative;
   }
   .com-navigation .nav-list {
@@ -320,8 +320,8 @@ export default {
   .com-navigation .nav-list .nav-li-menu .more-menu {
     display: inline-block;
     vertical-align: middle;
-    width: 20px;
-    height: 20px;
+    width: 0.3704rem;
+    height: 0.3704rem;
     background: url(//res.orayimg.com/open/1.0/img/icon_menu.39b28d0.png) no-repeat 50%;
     background-position: 0 0;
     padding-left: 0;
@@ -333,29 +333,29 @@ export default {
   .com-navigation .nav-list .nav-li .slidedown-list {
     overflow: hidden;
     position: absolute;
-    top: 64px;
+    top: 1.185rem;
     left: 0;
     width: 100%;
     background: #fff;
     z-index: 99;
     border-radius: 0 0 4px 4px;
-    min-width: 130px;
+    min-width: 2.407rem;
     display: none;
-    padding: 8px 0;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    padding: 0.148rem 0;
+    box-shadow: 0 0.037rem 0.222rem 0 rgba(0,0,0,.1);
   }
   .com-navigation .nav-list .nav-li .slidedown-list li {
-    height: 40px;
-    line-height: 40px;
+    height: 0.7407rem;
+    line-height: 0.7407rem;
   }
   .com-navigation .nav-list .nav-li-menu .slidedown-list li a {
-    padding-left: 16px;
+    padding-left: 0.296rem;
   }
   .com-navigation .nav-list .nav-li .slidedown-list li a {
     color: #333;
-    padding-left: 16px;
-    height: 40px;
-    line-height: 40px;
+    padding-left: 0.296rem;
+    height: 0.7407rem;
+    line-height: 0.7407rem;
     font-size: 14px;
     position: relative;
   }
@@ -366,8 +366,8 @@ export default {
     display: inline-block;
     float: left;
     font-size: 14px;
-    height: 64px;
-    line-height: 64px;
+    height: 1.185rem;
+    line-height: 1.185rem;
     position: relative;
   }
   .com-navigation .nav-list .nav-li-line:after {
@@ -375,9 +375,9 @@ export default {
     position: absolute;
     top: 22.5px;
     left: 50%;
-    margin-left: -.5px;
-    height: 20px;
-    width: 1px;
+    margin-left: -.0.0926rem;
+    height: 0.3704rem;
+    width: 0.0185rem;
     background: #ccc\9;
     background: hsla(0,0%,100%,.2);
   }
@@ -389,9 +389,9 @@ export default {
     position: absolute;
     top: 22.5px;
     left: 50%;
-    margin-left: -.5px;
-    height: 20px;
-    width: 1px;
+    margin-left: -.0.0926rem;
+    height: 0.3704rem;
+    width: 0.0185rem;
     background: #ccc\9;
     background: hsla(0,0%,100%,.2);
   }
@@ -399,8 +399,8 @@ export default {
     display: inline-block;
     float: left;
     font-size: 14px;
-    height: 64px;
-    line-height: 64px;
+    height: 1.185rem;
+    line-height: 1.185rem;
     position: relative;
   }
   .com-navigation .nav-list .nav-li a.active, .com-navigation .nav-list .nav-li a.nuxt-link-exact-active {
@@ -415,7 +415,7 @@ export default {
     height: 24px;
     background: url(//res.orayimg.com/open/1.0/img/logo_developer.8b40e45.png) no-repeat;
     background-position: 0 0;
-    margin-right: 8px;
+    margin-right: 0.148rem;
   }
   .nav-logo-system {
     display: inline-block;
@@ -423,6 +423,6 @@ export default {
     height: 24px;
     background: url(../../assets/img/home.png) no-repeat;
     background-position: 0 0;
-    margin-right: 8px;
+    margin-right: 0.148rem;
   }
 </style>

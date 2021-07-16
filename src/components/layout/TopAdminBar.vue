@@ -9,7 +9,7 @@
       <div class="float-right nav-title">
         <div class="menus-item">
           <router-link to="/adminLogin">
-            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: black;margin-right: 20px">后台管理系统</span>
+            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: black;margin-right: 0.3704rem">后台管理系统</span>
           </router-link>
         </div>
       </div>
@@ -47,9 +47,9 @@ export default {
   .navClass{
     /*position:fixed; !* 绝对定位，fixed是相对于浏览器窗口定位。 *!*/
     position: relative;
-    top:15px; /* 距离窗口顶部距离 */
+    top:0.278rem; /* 距离窗口顶部距离 */
     right: 22px;
-    height:10px; /* 高度 */
+    height:0.1852rem; /* 高度 */
     float: right;
     z-index:99; /* 层叠顺序，数值越大就越高。页面滚动的时候就不会被其他内容所遮挡。 */
   }
@@ -73,7 +73,7 @@ export default {
   }
   .theme--light.nav-fixed {
     background: rgba(255, 255, 255, 0.8) !important;
-    box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0.6);
+    box-shadow: 0 0.0926rem 6px -0.0926rem rgba(133, 133, 133, 0.6);
   }
   .theme--dark.nav-fixed {
     background: rgba(18, 18, 18, 0.8) !important;
@@ -106,7 +106,7 @@ export default {
     height: 100%;
   }
   .blog-title a {
-    font-size: 18px;
+    font-size: 0.333rem;
     font-weight: bold;
   }
   .user-btn,
@@ -129,11 +129,11 @@ export default {
   }
   .menus-item a:after {
     position: absolute;
-    bottom: -5px;
+    bottom: -0.0926rem;
     left: 0;
     z-index: -1;
     width: 0;
-    height: 3px;
+    height: 0.0556rem;
     background-color: #80c8f8;
     content: "";
     transition: all 0.3s ease-in-out;
@@ -153,17 +153,17 @@ export default {
     display: none;
     right: 0;
     width: max-content;
-    margin-top: 8px;
-    box-shadow: 0 5px 20px -4px rgba(0, 0, 0, 0.5);
+    margin-top: 0.148rem;
+    box-shadow: 0 0.0926rem 0.3704rem -4px rgba(0, 0, 0, 0.5);
     background-color: #fff;
     animation: submenu 0.3s 0.1s ease both;
   }
   .user-submenu:before {
     position: absolute;
-    top: -8px;
+    top: -0.148rem;
     left: 0;
     width: 100%;
-    height: 20px;
+    height: 0.3704rem;
     content: "";
   }
   .user-submenu a {
@@ -180,7 +180,7 @@ export default {
     0% {
       opacity: 0;
       filter: alpha(opacity=0);
-      transform: translateY(10px);
+      transform: translateY(0.1852rem);
     }
     100% {
       opacity: 1;

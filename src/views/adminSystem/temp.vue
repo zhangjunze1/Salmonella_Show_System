@@ -10,7 +10,7 @@
                 <p class="login-til">扫码登录</p>
                 <div class="normal-wrap" id="qrcode-box">
                   <div class="code-wrap">
-                    <img id="qrcode" style="height: 201px;width: 201px;border: #333333" src="../assets/img/wechat.jpg">
+                    <img id="qrcode" style="height: 3.722rem;width: 3.722rem;border: #333333" src="../assets/img/wechat.jpg">
                     <p class="tip-text" style="font-size: 14px;">
                       微信扫码
                     </p>
@@ -20,7 +20,7 @@
               <!--        右半部分-->
               <div class="login-content password-login" id="password-login">
                 <p class="login-til">密码登录</p>
-                <el-form :model="loginForm" :rules="loginRules" style="margin-top: 46px" ref="loginForm" label- width="0px" class="login_form">
+                <el-form :model="loginForm" :rules="loginRules" style="margin-top: 0.85185rem" ref="loginForm" label- width="0px" class="login_form">
                   <el-form-item prop="name">
                     <el-input v-model="loginForm.name" placeholder="请输入账户" prefix-icon="el-icon-user-solid"></el-input>
                   </el-form-item>
@@ -28,7 +28,7 @@
                     <el-input type="password" v-model="loginForm.password" placeholder="请输入登录密码" prefix-icon="el-icon-lock"></el-input>
                   </el-form-item>
                   <el-form-item>
-                    <div class="remember-wrap" style="margin-top: 19px;">
+                    <div class="remember-wrap" style="margin-top: 0.352rem;">
                       <div class="link-box">
                         <a class="link" target="_blank" @click="back">返回</a>
                         <a class="link" style="margin-left: 38px" target="_blank" @click="toInvite">邀请码注册</a>
@@ -90,28 +90,28 @@ export default {
 }
 
 .login-page .login-content {
-  height: 400px;
+  height: 7.407rem;
 }
 
 .login-page .login-content .login-box {
-  width: 800px;
-  margin-left: -400px;
+  width: 14.815rem;
+  margin-left: -7.407rem;
 }
 
 .login-page .login-content .login-box {
-  margin-top: -260px;
+  margin-top: -4.815rem;
 }
 
 .login-page .login-content .login-box {
   position: absolute;
   left: 50%;
-  margin-left: -380px;
+  margin-left: -7.037rem;
   top: 50%;
-  margin-top: -200px;
+  margin-top: -3.703rem;
   width: 740px;
-  height: 400px;
+  height: 7.407rem;
   display: block;
-  box-shadow: 0 5px 30px rgba(51,51,51,0.25);
+  box-shadow: 0 0.0926rem 0.556rem rgba(51,51,51,0.25);
 }
 .login-wrap {
   margin: 0 auto;
@@ -126,14 +126,14 @@ export default {
   position: absolute;
   z-index: 12;
   left: 100%;
-  top: 60px;
-  bottom: 60px;
-  width: 1px;
+  top: 1.111rem;
+  bottom: 1.111rem;
+  width: 0.0185rem;
   background: #e1e1e1;
-  margin-left: -1px;
+  margin-left: -0.0185rem;
 }
 .login-wrap .item-login {
-  width: 630px;
+  width: 60.556rem;
 }
 
 .item-login {
@@ -153,34 +153,34 @@ export default {
 }
 
 .login-wrap .login-content {
-  padding: 20px 50px 0 50px;
+  padding: 0.3704rem 0.9259rem 0 0.9259rem;
   position: relative;
 }
 .login-wrap .mobile-login, .login-wrap .code-login {
   display: inline-block;
   font-size: 14px;
   float: left;
-  width: 300px;
+  width: 5.556rem;
 }
 
 .login-wrap .login-content .login-til {
   font-size: 24px;
-  line-height: 42px;
+  line-height: 0.778rem;
   color: #333;
-  margin-top: 15px;
-  margin-bottom: -15px;
+  margin-top: 0.278rem;
+  margin-bottom: -0.278rem;
 }
 .login-wrap .code-login .normal-wrap .code-wrap {
-  width: 201px;
-  height: 201px;
+  width: 3.722rem;
+  height: 3.722rem;
   margin: 0 auto;
-  margin-top: 30px;
-  border: 1px solid #e0e0e0;
+  margin-top: 0.556rem;
+  border: 0.0185rem solid #e0e0e0;
   position: relative;
 }
 
 .login-wrap .link-box .link {
-  margin-left: 5px;
+  margin-left: 0.0926rem;
 }
 
 .login-wrap .link {
@@ -189,13 +189,13 @@ export default {
 
 .login-wrap .code-login .tip-text {
   color: #333;
-  line-height: 36px;
-  margin-top: 10px;
+  line-height: 0.667rem;
+  margin-top: 0.1852rem;
   font-size: 13px!important;
 }
 
 .login-wrap .login-content {
-  padding: 20px 50px 0 50px;
+  padding: 0.3704rem 0.9259rem 0 0.9259rem;
   position: relative;
 }
 
@@ -204,23 +204,23 @@ export default {
   display: inline-block;
   font-size: 14px;
   float: left;
-  width: 300px;
+  width: 5.556rem;
 }
 
 .login-wrap .login-content .login-til {
   font-size: 24px;
-  line-height: 42px;
+  line-height: 0.778rem;
   color: #333;
-  margin-top: 15px;
-  margin-bottom: -15px;
+  margin-top: 0.278rem;
+  margin-bottom: -0.278rem;
 }
 
 .login-wrap .remember-wrap {
   text-align: left;
-  height: 18px;
+  height: 0.333rem;
   line-height: 0px;
-  margin-top: 19px;
-  font-size: 12px;
+  margin-top: 0.352rem;
+  font-size: 0.222rem;
   color: #6b6b6b;
 }
 
@@ -228,13 +228,13 @@ export default {
   *display: inline;
   *zoom: 1;
   display: block;
-  width: 200px;
-  height: 42px;
+  width: 3.703rem;
+  height: 0.778rem;
   background: #ff0042;
-  border-radius: 27px;
+  border-radius: 0.5rem;
   color: #fff;
-  font-size: 18px;
-  line-height: 16px;
+  font-size: 0.333rem;
+  line-height: 0.296rem;
   text-align: center;
   position: absolute;
   top: 0px;

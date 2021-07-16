@@ -1,9 +1,9 @@
 <template>
   <el-container class="main_container">
     <!--侧边栏-->
-    <el-aside :width="isCollapse?'64px':'200px'">
+    <el-aside :width="isCollapse?'1.185rem':'3.703rem'">
       <div class="title_box_main">
-        <i style="margin-right: 8px" class="el-icon-odometer"></i>
+        <i style="margin-right: 0.148rem" class="el-icon-odometer"></i>
         <span >沙门氏杆菌展示</span>
       </div>
       <!--展开收起-->
@@ -26,7 +26,7 @@
     <el-container>
       <!--头部布局-->
       <el-header >
-        <span style="margin-left: 20px; margin-right: 20px; font-size: 18px;color: black;size: 20px">后端管理系统-欢迎您-管理员编号:{{this.$root.ADMIN.id}}</span>
+        <span style="margin-left: 0.3704rem; margin-right: 0.3704rem; font-size: 0.333rem;color: black;size: 0.3704rem">后端管理系统-欢迎您-管理员编号:{{this.$root.ADMIN.id}}</span>
 
         <div class="right_box">
           <el-dropdown>
@@ -43,7 +43,7 @@
         <!--路由视图-->
         <router-view></router-view>
       </el-main>
-      <el-footer style="height: 25px;text-align: center;background: #F0F8FF" >
+      <el-footer style="height: 0.463rem;text-align: center;background: #F0F8FF" >
         ©Copyright 2021 zhangjz-toishT工作室 | 浙大城市学院小伙
       </el-footer>
     </el-container>
@@ -103,33 +103,33 @@ export default {
   padding-left: 0;
   color: #FFFFFF;
   align-items: center;
-  font-size: 20px;
+  font-size: 0.3704rem;
   /*左边的logo和标题*/
   .left_box{
     display: flex;
     align-items: center;
-    font-size: 30px;
+    font-size: 0.556rem;
     color: #F0F8FF;
     /*logo*/
     img{
-      width: 55px;
-      height: 55px;
+      width: 1.0185rem;
+      height: 1.0185rem;
       border-radius: 30%;
-      margin: 0px 0px 5px 5px;
+      margin: 0px 0px 0.0926rem 0.0926rem;
     }
     /*标题*/
     span{
-      margin-left: 15px;
+      margin-left: 0.278rem;
     }
   }
   /*右边的登录头像*/
   .right_box{
     .el-dropdown>img{
-      height: 55px;
-      width: 55px;
+      height: 1.0185rem;
+      width: 1.0185rem;
       border-radius: 50%;
       background-color: #FFFFFF;
-      margin: 0px 15px 0px 0px;
+      margin: 0px 0.278rem 0px 0px;
       background-size: contain;
     }
   }
@@ -145,9 +145,9 @@ export default {
   /*展开/收起*/
   .toggle_box{
     background-color: white;
-    font-size: 15px;
+    font-size: 0.278rem;
     font-weight: bold;
-    line-height: 25px;
+    line-height: 0.463rem;
     color: black;
     letter-spacing: 0.2em;
     text-align: center;
@@ -156,8 +156,8 @@ export default {
   .title_box_main{
     display: flex;
     align-items: center;
-    font-size: 20px;
-    height: 58px;
+    font-size: 0.3704rem;
+    height: 1.074rem;
     color: #FFFFFF;
   }
 }

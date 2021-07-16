@@ -7,8 +7,8 @@
         </p>
         <!-- 联系方式 -->
         <div class="blog-contact animated zoomIn">
-          <a class="github circular icon button" data-content="https://github.com/zhangjunze1/salmonella_show_system" data-position="bottom center" style="margin-right: 50px"><i class="github icon"></i></a>
-          <a class="wechat circular icon button" style="margin-right: 50px"><i class="weixin icon"></i></a>
+          <a class="github circular icon button" data-content="https://github.com/zhangjunze1/salmonella_show_system" data-position="bottom center" style="margin-right: 0.9259rem"><i class="github icon"></i></a>
+          <a class="wechat circular icon button" style="margin-right: 0.925rem"><i class="weixin icon"></i></a>
           <a class="qq circular icon button" data-content="412057605" data-position="bottom center"><i class="qq icon"></i></a>
         </div>
 
@@ -57,11 +57,11 @@ export default {
 
 <style scoped>
 .m-home {
-  padding-top: 90vh !important;
+  padding-top: 23vh !important;
   padding-bottom: 0px !important;
 }
 .home-title {
-  font-size: 32px;
+  font-size: 0.592rem;
 }
 .home-banner {
      position: absolute;
@@ -89,17 +89,17 @@ export default {
 .scroll-down {
   cursor: pointer;
   position: absolute;
-  bottom: 0;
+  bottom: -0.7rem;
   width: 100%;
 }
 .scroll-down i {
-  font-size: 2rem;
+  font-size: 0.75rem;
 }
 body {
   background: url("../assets/img/bg.png");
 }
 .container {
-  width: 1240px;
+  width: 23.14rem;
   margin: 0 auto;
 }
 </style>

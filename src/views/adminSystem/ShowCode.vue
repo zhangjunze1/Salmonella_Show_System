@@ -3,7 +3,7 @@
     <div>
       <!--面包屑-->
       <el-breadcrumb separator-class="el-icon-arrow-right"
-                     style="padding-left: 10px;padding-bottom: 10px;font-size: 12px">
+                     style="padding-left: 0.1852rem;padding-bottom: 0.1852rem;font-size: 0.222rem">
         <el-breadcrumb-item>首页</el-breadcrumb-item>
         <el-breadcrumb-item>邀请码</el-breadcrumb-item>
         <el-breadcrumb-item>邀请码列表</el-breadcrumb-item>
@@ -13,13 +13,13 @@
     <el-card class="box-card">
       <el-form :inline="true" :model="state" class="demo-form-inline">
         <el-row type="flex" justify="start">
-          <el-form-item label="邀请码状态" style="margin-left: 10px">
+          <el-form-item label="邀请码状态" style="margin-left: 0.1852rem">
             <el-select v-model="state" clearable placeholder="请选择状态">
               <el-option label="尚未选用" value="未使用" style="color: red"></el-option>
               <el-option label="已使用" value="已使用" style="color: green"></el-option>
             </el-select>
           </el-form-item>
-          <el-form-item style="margin-left: 10px"  >
+          <el-form-item style="margin-left: 0.1852rem"  >
             <el-button icon="el-icon-refresh" @click="resetForm">重置</el-button>
             <el-button type="primary" icon="el-icon-search" @click="getInvitationCode">查询</el-button>
           </el-form-item>
@@ -30,7 +30,7 @@
       v-loading="loading"
       :data="CodeList"
       border
-      max-height="380px"
+      max-height="7.037rem"
       style="width: 100%;">
       <el-table-column
         prop="invitationCode"
@@ -57,7 +57,7 @@
     <div class="block">
       <span class="demonstration"></span>
       <el-pagination
-        style="padding-top: 20px"
+        style="padding-top: 0.3704rem"
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="current"

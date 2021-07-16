@@ -2,11 +2,11 @@
   <div class="home">
     <div class="home-container">
       <div>
-        <h1 class="blog-title animated zoomIn" style="margin-top: 50px">
+        <h1 class="blog-title animated zoomIn" style="margin-top: 0.9259rem">
           沙门氏杆菌展示系统
         </h1>
       </div>
-      <div class="login_box" style="margin-top: 50px">
+      <div class="login_box" style="margin-top: 0.9259rem">
         <!--头像-->
         <div class="avatar_box">
           <img src="../assets/img/dna1.png" class="avatar_img">
@@ -155,13 +155,13 @@ export default {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-150px);
+    transform: translateY(-2.778rem);
   }
 }
 
 .textBox {
   width: 100%;
-  height: 40px;
+  height: 0.7407rem;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -169,11 +169,11 @@ export default {
 }
 
 .login_box {
-  width: 450px;
-  height: 380px;
+  width: 8.333rem;
+  height: 7.037rem;
   background-color: unset;
-  border-radius: 3px;
-  border-width: 100px;
+  border-radius: 0.0556rem;
+  border-width: 1.852rem;
   border: solid #FFFFFF;
   position: absolute;
   left: 50%;
@@ -184,7 +184,7 @@ export default {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  padding: 0px 20px;
+  padding: 0px 0.3704rem;
   box-sizing: border-box;
 }
 
@@ -204,18 +204,18 @@ export default {
 
 .verifyCode_img{
   width: 30%;
-  height: 45px;
+  height: 0.833rem;
   justify-content: flex-end;
 }
 
 .avatar_box{
-  width: 130px;
-  height: 130px;
-  border: 1px solid #EEEEEE;
+  width: 2.407rem;
+  height: 2.407rem;
+  border: 0.0185rem solid #EEEEEE;
   border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  margin: -65px auto;
+  padding: 0.1852rem;
+  box-shadow: 0 0.037rem 0.222rem 0 rgba(0, 0, 0, 0.1);
+  margin: -1.2037rem auto;
   background-color: #FFFFFF;
 }
 
