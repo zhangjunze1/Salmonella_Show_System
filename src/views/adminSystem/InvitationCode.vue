@@ -44,6 +44,7 @@
         </el-switch>
         </el-tooltip>
         <el-button style="margin-top: 10px;" type="primary" size="mini" @click="getInvitationCode()">生成邀请码</el-button>
+        <el-button style="margin-top: 10px;" type="primary" size="mini" @click="getdata()">...</el-button>
         <p style="margin-top: 10px">生成的邀请码是：{{this.code}}</p>
       </div>
     </row>
@@ -99,18 +100,18 @@ export default {
         ['北京', '上海', '天津', '重庆', '香港',
           '澳门', '安徽', '福建', '广东', '广西',
           '贵州', '甘肃', '海南', '河北', '河南',
-          '黑龙江', '湖北', '吉林', '江苏', '江西',
-          '辽宁', '内蒙古', '宁夏', '青海', '陕西',
-          '山西', '山东', '四川', '台湾', '西藏',
-          '云南', '浙江']
+          '黑龙江', '湖北', '湖南', '吉林', '江苏',
+          '江西', '辽宁', '内蒙古', '宁夏', '青海',
+          '陕西', '山西', '山东', '四川', '台湾',
+          '西藏', '新疆', '云南', '浙江']
       const pinyin =
         ['beijing', 'shanghai', 'tianjing', 'chongqing', 'xianggang',
           'aomen', 'anhui', 'fujian', 'guangdong', 'guangxi',
           'guizhou', 'gansu', 'hainan', 'hebei', 'henan',
-          'heilongjiang', 'hubei', 'jilin', 'jiangsu', 'jiangxi',
-          'liaoning', 'neimenggu', 'ningxia', 'qinghai', 'shanxi',
-          'shanxi', 'shandong', 'sichuan', 'taiwan', 'xizang',
-          'yunnan', 'zhejiang']
+          'heilongjiang', 'hubei', 'hunan', 'jilin', 'jiangsu',
+          'jiangxi', 'liaoning', 'neimenggu', 'ningxia', 'qinghai',
+          'shanxi', 'shanxi', 'shandong', 'sichuan', 'taiwan',
+          'xizang', 'xinjiang', 'yunnan', 'zhejiang']
       provinces.forEach((province, index) => {
         data.push({
           label: province,
@@ -147,6 +148,7 @@ export default {
         this.temp = this.temp + ',' + item
       })
       console.log(this.temp)
+      console.log(this.value)
     },
     async getInvitationCode () {
       const confirmResult = await this.$confirm('是否根据当前省份权限生成邀请码，同时将数据权限调为<' + this.value + '>?', '提示', {

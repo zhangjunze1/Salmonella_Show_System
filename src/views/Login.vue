@@ -20,7 +20,7 @@
 <!--        右半部分-->
         <div class="login-content password-login" id="password-login">
           <p class="login-til">阿斯托里研究机构</p>
-          <el-form :model="loginForm" :rules="loginRules" style="margin-top: 20%" ref="loginForm" label- width="0rem" class="login_form">
+          <el-form :model="loginForm" :rules="loginRules" style="margin-top: 22%" ref="loginForm" label- width="0rem" class="login_form">
             <el-form-item prop="name">
               <el-input v-model="loginForm.name" placeholder="请输入账户" prefix-icon="el-icon-user-solid"></el-input>
             </el-form-item>
@@ -31,8 +31,12 @@
               <div class="remember-wrap" style="margin-top: 10%;">
                 <div class="link-box">
                   <a class="link" target="_blank" @click="back">返回</a>
-                  <a class="link" style="margin-left: 20%" target="_blank" @click="toInvite">邀请码注册</a>
+                  <a class="link" style="margin-left: 20%" target="_blank" @click="test">游客登陆</a>
+                  <a class="link" style="margin-left: 50%" target="_blank" @click="toInvite">邀请码注册</a>
 <!--                  <a class="link" style="margin-left: 108px" target="_blank" @click="toAdmin">管理系统</a>-->
+                </div>
+                <div class="link-box" style="margin-top: 10%">
+                  <p style="color: #1b2327;margin-left: 2%">注：游客仅能查看部分数据</p>
                 </div>
               </div>
             </el-form-item>
@@ -72,6 +76,11 @@ export default {
     }
   },
   methods: {
+    test () {
+      this.loginForm.name = 'test'
+      this.loginForm.password = '123456'
+      this.systemSubmitForm('loginForm')
+    },
     back () {
       this.$router.push('/system')
     },
@@ -154,6 +163,8 @@ export default {
   }
 
   .login-page .login-content .login-box {
+    min-height: 390px;
+    min-width: 690px;
     position: absolute;
     left: 50%;
     margin-left: -20%;
@@ -215,7 +226,7 @@ export default {
 }
 
 .login-wrap .login-content .login-til {
-  font-size: 0.444rem;
+  font-size: 2%;
   line-height: 1%;
   color: #333;
   margin-top: 1.5%;
@@ -259,11 +270,11 @@ export default {
 }
 
 .login-wrap .login-content .login-til {
-  font-size: 24px;
-  line-height: 0.778rem;
+  font-size: 150%;
+  line-height: 100%;
   color: #333;
-  margin-top: 0.278rem;
-  margin-bottom: -0.278rem;
+  margin-top: 10%;
+  margin-bottom: -4%;
 }
 
 .login-wrap .remember-wrap {

@@ -34,6 +34,11 @@ const routes = [
     component: () => import('../views/showSystem/dataQuery.vue')
   },
   {
+    path: '/dataCharts',
+    name: 'dataCharts',
+    component: () => import('../views/showSystem/dataCharts.vue')
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login')

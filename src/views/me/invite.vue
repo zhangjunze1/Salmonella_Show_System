@@ -134,7 +134,7 @@ export default {
       } else if (data.code === 200) {
         this.$notify({
           title: '成功',
-          message: '成功登录后台管理系统',
+          message: '成功注册',
           type: 'success',
           duration: 2000
         })
@@ -167,6 +167,8 @@ export default {
 }
 
 .login-page .login-content .login-box {
+  min-width: 520px;
+  min-height: 478px;
   position: absolute;
   left: 50%;
   margin-left: -14%;

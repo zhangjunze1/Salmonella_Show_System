@@ -41,13 +41,15 @@ export const systemLogin = (name, password) => {
 
 /**
  * 获取初始数据参数
+ * @param invitationCode
  * @returns {AxiosPromise}
  */
-export const findInitDataList = () => {
+export const findInitDataList = (invitationCode) => {
   return request({
     url: '/geneSequencing/getAllYearAndSerotypeAndProvince',
     method: 'GET',
     params: {
+      invitationCode
     }
   })
 }

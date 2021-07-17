@@ -141,6 +141,8 @@ export default {
 }
 
 .login-page .login-content .login-box {
+  min-height: 400px;
+  min-width: 500px;
   position: absolute;
   left: 50%;
   margin-left: -14%;
@@ -161,14 +163,14 @@ export default {
 
 .login-wrap:after {
   content: '';
-  position: absolute;
+  position: relative;
   z-index: 12;
   left: 100%;
   top: 10%;
   bottom: 1.111rem;
-  width: 0.0185rem;
+  width: 5%;
   background: #e1e1e1;
-  margin-left: -0.0185rem;
+  margin-left: -5%;
 }
 .login-wrap .item-login {
   width: 60%;

@@ -35,7 +35,7 @@
             <div class="ibox float-e-margins">
               <div class="ibox-title" style="width: 47%;height: 31.375%;margin-top: 3%">
                 <p class="home-title">Data Retrieval</p>
-                <a href="http://localhost:8080/#/dataQuery" title="Data Retrieval"><img style="margin-top: -9%;" src="../assets/img/data.png" /></a>
+                <a href="http://121.196.160.71/#/dataQuery" title="Data Retrieval"><img style="margin-top: -9%;" src="../assets/img/data.png" /></a>
               </div>
             </div>
           </div>
@@ -122,6 +122,7 @@ body {
 }
 
 .row {
+  min-width: 1200px;
   width: 100%;
   padding-right: 0%;
   padding-left: 5%;

@@ -3,7 +3,7 @@
     <div class="home-banner">
       <div class="banner-container">
         <p class="home-title" style="color: whitesmoke">
-          数据页
+          Data Retrieval
         </p>
 <!--        &lt;!&ndash; 联系方式 &ndash;&gt;-->
 <!--        <div class="blog-contact animated zoomIn">-->
@@ -21,9 +21,9 @@
 
     <div class="m-home">
       <div class="container">
-        <p class="home-title" style="color: black;text-align: center">
-          Data Retrieval
-        </p>
+<!--        <p class="home-title" style="color: black;text-align: center">-->
+<!--          Data Retrieval-->
+<!--        </p>-->
         <el-form ref="form" :model="form" label-width="2.037rem" size="mini" >
           <el-row type="flex" justify="start">
             <el-form-item prop="Serotype" label="Serotype:">
@@ -74,8 +74,33 @@
           :table-data="tableData"
           row-key-field-name="id"
           :checkbox-option="checkboxOption"
+          v-if="whichTable==1"
+          style="margin-left: -2%;margin-right: -2%"
+        />
+        <div class="table-pagination" v-if="whichTable==1"  >
+          <ve-pagination
+            :total="totalCount"
+            :page-index="pageIndex"
+            :page-size="pageSize"
+            @on-page-number-change="pageNumberChange"
+            @on-page-size-change="pageSizeChange"
           />
-        <div class="table-pagination">
+        </div>
+        <ve-table
+          :columns="columns0"
+          :row-style-option="rowStyleOption"
+          :cell-selection-option="cellSelectionOption"
+          rowKeyFieldName="id"
+          :border-around="true"
+          :border-x="false"
+          :border-y="true"
+          :table-data="tableData"
+          row-key-field-name="id"
+          :checkbox-option="checkboxOption"
+          v-if="whichTable==0"
+          style="margin-left: -2%;margin-right: -2%"
+        />
+        <div class="table-pagination" v-if="whichTable==0">
           <ve-pagination
             :total="totalCount"
             :page-index="pageIndex"
@@ -101,6 +126,7 @@ export default {
   },
   data () {
     return {
+      whichTable: 2,
       form: {
         Serotype: '',
         Year: '',
@@ -197,10 +223,69 @@ export default {
         { field: 'resfinder', key: 'aak', title: 'resfinder', align: 'center' },
         { field: 'vfdb', key: 'aal', title: 'vfdb', align: 'center' }
       ],
-      tableData: []
+      tableData: [],
+      columns0: [
+        { field: 'id', key: 'a', title: 'id', align: 'center' },
+        { field: 'name', key: 'b', title: 'name', align: 'center' },
+        { field: 'bacteria', key: 'c', title: 'bacteria', align: 'center' },
+        { field: 'serotype', key: 'd', title: 'serotype', align: 'center' },
+        { field: 'st', key: 'e', title: 'st', align: 'center' },
+        { field: 'host', key: 'f', title: 'host', align: 'center' },
+        { field: 'year', key: 'g', title: 'year', align: 'center' },
+        { field: 'country', key: 'h', title: 'country', align: 'center' },
+        { field: 'province', key: 'i', title: 'province', align: 'center' },
+        { field: 'continent', key: 'j', title: 'continent', align: 'center' },
+        { field: 'whetherMic', key: 'r', title: 'whetherMic', align: 'center' },
+        { field: 'enr', key: 's', title: 'enr', align: 'center' },
+        { field: 'ofl', key: 't', title: 'ofl', align: 'center' },
+        { field: 'amp', key: 'u', title: 'amp', align: 'center' },
+        { field: 'gen', key: 'v', title: 'gen', align: 'center' },
+        { field: 'kan', key: 'w', title: 'kan', align: 'center' },
+        { field: 'tet', key: 'x', title: 'tet', align: 'center' },
+        { field: 'azi', key: 'y', title: 'azi', align: 'center' },
+        { field: 'nal', key: 'z', title: 'nal', align: 'center' },
+        { field: 'cip', key: 'aa', title: 'cip', align: 'center' },
+        { field: 'chl', key: 'ab', title: 'chl', align: 'center' },
+        { field: 'sxt', key: 'ac', title: 'sxt', align: 'center' },
+        { field: 'str', key: 'ad', title: 'str', align: 'center' },
+        { field: 'amc', key: 'ae', title: 'amc', align: 'center' },
+        { field: 'siz', key: 'af', title: 'siz', align: 'center' },
+        { field: 'cf', key: 'ag', title: 'cf', align: 'center' },
+        { field: 'cef', key: 'ah', title: 'cef', align: 'center' },
+        { field: 'cx', key: 'ai', title: 'cx', align: 'center' },
+        { field: 'col', key: 'aj', title: 'col', align: 'center' },
+        { field: 'mpn', key: 'ak', title: 'mpn', align: 'center' },
+        { field: 'aorc', key: 'al', title: 'aorc', align: 'center' },
+        { field: 'spt', key: 'am', title: 'spt', align: 'center' },
+        { field: 'ffc', key: 'an', title: 'ffc', align: 'center' },
+        { field: 'sf', key: 'ao', title: 'sf', align: 'center' },
+        { field: 'caz', key: 'ap', title: 'caz', align: 'center' },
+        { field: 'mem', key: 'aq', title: 'mem', align: 'center' },
+        { field: 'apr', key: 'ar', title: 'apr', align: 'center' },
+        { field: 'cl', key: 'as', title: 'cl', align: 'center' },
+        { field: 'meq', key: 'at', title: 'meq', align: 'center' },
+        { field: 'tri', key: 'au', title: 'tri', align: 'center' },
+        { field: 'sul', key: 'av', title: 'sul', align: 'center' },
+        { field: 'amo', key: 'aw', title: 'amo', align: 'center' },
+        { field: 'cla', key: 'ax', title: 'cla', align: 'center' },
+        { field: 'ipm', key: 'ay', title: 'ipm', align: 'center' },
+        { field: 'amk', key: 'az', title: 'amk', align: 'center' },
+        { field: 'cfz', key: 'aaa', title: 'cfz', align: 'center' },
+        { field: 'atm', key: 'aab', title: 'atm', align: 'center' },
+        { field: 'otc', key: 'aac', title: 'otc', align: 'center' },
+        { field: 'pmb', key: 'aad', title: 'pmb', align: 'center' },
+        { field: 'fis', key: 'aae', title: 'fis', align: 'center' },
+        { field: 'xnl', key: 'aaf', title: 'xnl', align: 'center' },
+        { field: 'whetherJoiningTogether', key: 'aah', title: 'whetherJoiningTogether', align: 'center' },
+        { field: 'sequencingFileDownloadLink', key: 'aai', title: 'sequencingFileDownloadLink', align: 'center' },
+        { field: 'cgmlst', key: 'aaj', title: 'cgmlst', align: 'center' },
+        { field: 'resfinder', key: 'aak', title: 'resfinder', align: 'center' },
+        { field: 'vfdb', key: 'aal', title: 'vfdb', align: 'center' }
+      ]
     }
   },
   created () {
+    this.ifCanVisit()
     this.getSerotypeList()
     this.getQuery()
   },
@@ -223,8 +308,26 @@ export default {
         top: document.documentElement.clientHeight
       })
     },
+    async ifCanVisit () {
+      if (window.sessionStorage.getItem('id') === null) {
+        const confirmResult = await this.$confirm('您尚未登录，无权限访问数据检索页，是否将以游客方式登录？', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).catch(err => {
+          return err
+        })
+        // 如果点击确定返回字符串 confirm
+        // 如果点击取消返回字符串 cancel
+        if (confirmResult !== 'confirm') {
+          this.$router.back()
+          return this.$message.info('cancel')
+        }
+        this.$router.push('/login')
+      }
+    },
     async getSerotypeList () {
-      const { data } = await findInitDataList()
+      const { data } = await findInitDataList(window.sessionStorage.getItem('invitationCode'))
       this.serotypeList = data.data.Serotypes
       this.YearList = data.data.years
       this.ProvinceList = data.data.provinces
@@ -233,6 +336,7 @@ export default {
       const { data } = await findDataRetrievalList(this.pageIndex, this.pageSize, this.form.Year, this.form.Province, this.form.Serotype, window.sessionStorage.getItem('invitationCode'))
       this.totalCount = data.data.total
       this.tableData = data.data.geneSequencing
+      this.whichTable = data.data.permission
       this.tableData.forEach((item, i) => {
         if (item.disease === '无权限') {
           item.age = '无权限'
@@ -303,7 +407,8 @@ body {
 }
 
 .container {
-  width: 100%;
+  min-width: 1400px;
+  width: 90%;
 }
 .page-index .section-title {
   font-size: 0.556rem;
