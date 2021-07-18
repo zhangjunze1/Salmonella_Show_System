@@ -7,12 +7,69 @@
         </p>
       </div>
     </div>
+    <div class="m-home">
+      <div class="container">
+        <div class="d-flex justify-content-center" style="margin-bottom: 25px;">
+          <div style="text-align: center">
+            <el-button v-for="(item,index) in com_list" :key="index" @click="currentTab = item">{{item}}</el-button>
+            <component :is="iscomponent"></component>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Footer from '../../components/layout/Footer'
+import Host from '../../components/echarts/Host'
+import Serotype from '@/components/echarts/Serotype'
+import Map from '@/components/echarts/Map'
 export default {
-  name: 'dataCharts'
+  name: 'dataCharts',
+  data () {
+    return {
+      com_list: ['Host', 'Serotype', 'Map'],
+      currentTab: 'Host'
+    }
+  },
+  components: {
+    Host,
+    Serotype,
+    Map,
+    Footer
+  },
+  created () {
+    this.ifCanVisit()
+  },
+  mounted () {
+  },
+  computed: {
+    iscomponent () {
+      return this.currentTab.toLowerCase()
+    }
+  },
+  methods: {
+    async ifCanVisit () {
+      if (window.sessionStorage.getItem('id') === null) {
+        const confirmResult = await this.$confirm('您尚未登录，无权限访问数据图表页，是否将以游客方式登录？', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).catch(err => {
+          return err
+        })
+        // 如果点击确定返回字符串 confirm
+        // 如果点击取消返回字符串 cancel
+        if (confirmResult !== 'confirm') {
+          this.$router.back()
+          return this.$message.info('cancel')
+        }
+        this.$router.push('/login')
+      }
+    }
+  }
 }
 </script>
 
@@ -42,4 +99,10 @@ export default {
 .home-title {
   font-size: 20px;
 }
+.m-home {
+  padding-top: 5% !important;
+  padding-bottom: 0px !important;
+  width: 100%;
+}
+
 </style>

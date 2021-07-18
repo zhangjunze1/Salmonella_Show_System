@@ -13,7 +13,7 @@
     "bootstrap-vue": "^2.21.2",
     "chokidar": "^3.5.2",
     "core-js": "^3.6.5",
-    "echarts": "^5.1.1",
+    "echarts": "^4.9.0",
     "echarts-gl": "^2.0.4",
     "element-ui": "^2.15.0",
     "lib-flexible": "^0.3.2",

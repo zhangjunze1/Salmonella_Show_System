@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TopNavBar v-show="( path==='/system' || path==='/dataQuery')"></TopNavBar>
+    <TopNavBar v-show="( path==='/system' || path==='/dataQuery' || path==='/dataCharts')"></TopNavBar>
     <TopAdminBar v-show="( path==='/login' || path==='/invite' )"></TopAdminBar>
 <!--    <TopAdminBar ></TopAdminBar>-->
 <!--    <Audio></Audio>-->

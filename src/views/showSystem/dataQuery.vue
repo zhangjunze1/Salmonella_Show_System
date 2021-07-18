@@ -75,7 +75,7 @@
           row-key-field-name="id"
           :checkbox-option="checkboxOption"
           v-if="whichTable==1"
-          style="margin-left: -2%;margin-right: -2%"
+          style="margin-left: -7%;margin-right: -7%"
         />
         <div class="table-pagination" v-if="whichTable==1"  >
           <ve-pagination
@@ -98,7 +98,7 @@
           row-key-field-name="id"
           :checkbox-option="checkboxOption"
           v-if="whichTable==0"
-          style="margin-left: -2%;margin-right: -2%"
+          style="margin-left: -7%;margin-right: -7%"
         />
         <div class="table-pagination" v-if="whichTable==0">
           <ve-pagination

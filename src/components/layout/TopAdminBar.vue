@@ -7,9 +7,9 @@
 <!--        </router-link>-->
       </div>
       <div class="float-right nav-title">
-        <div class="menus-item" style="min-width: 100%">
+        <div class="menus-item" style="min-width: 50%">
           <router-link to="/adminLogin">
-            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: black;margin-right: 1.04%;min-width: 100%">后台管理系统</span>
+            <i class="iconfont2 iconzhuye" style="color: whitesmoke" /><span style="color: black;margin-right: 1.04%;min-width: 200%">后台管理系统</span>
           </router-link>
         </div>
       </div>
