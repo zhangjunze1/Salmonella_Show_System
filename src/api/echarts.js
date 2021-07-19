@@ -42,3 +42,18 @@ export const getProvinceChartsData = (invitationCode) => {
     }
   })
 }
+
+/**
+ * 獲取Province Year的信息
+ * @param invitationCode
+ * @returns {AxiosPromise}
+ */
+export const getGroupYearChartsData = (invitationCode) => {
+  return request({
+    url: '/geneSequencing/getGroupYear',
+    method: 'GET',
+    params: {
+      invitationCode
+    }
+  })
+}

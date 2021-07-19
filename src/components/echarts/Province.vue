@@ -1,329 +1,110 @@
 <template>
-  <div id="china_map_box">
-    <div id="china_map"></div>
+  <div class="hello">
+    <div ref="mapBox" style="height:600px;width:800px"></div>
   </div>
 </template>
 
 <script>
+// 1.导入 echarts
 import * as echarts from 'echarts'
 import 'echarts/map/js/china.js'
 import { getProvinceChartsData } from '@/api/echarts'
+// 使用地图 需要先注册地图
+const option = {
+  title: {
+    text: '地图'
+  },
+  // 控制数据和显示问题
+  series: [{
+    name: '样本数量',
+    type: 'map', // 告诉echarts 渲染地图
+    map: 'china',
+    label: { // label默认是不显示的，省份字体
+      show: true, // 显示各个省份名称
+      fontSize: 10
+    },
+    itemStyle: {
+      areaColor: '#fff' // 区域的背景颜色
+    },
+    emphasis: { // 控制鼠标滑过时的高亮样式
+      itemStyle: {
+        areaColor: '#c7fffd'
+      }
+    },
+    zoom: 1.2, // 控制地图的放大缩小
+    data: JSON.parse(window.sessionStorage.getItem('province'))
+  }],
+  // 显示颜色
+  visualMap: [{
+    type: 'piecewise',
+    show: true,
+    splitNumber: 6,
+    pieces: [{
+      min: 140
+    }, {
+      min: 81,
+      max: 140
+    }, {
+      min: 51,
+      max: 80
+    }, {
+      min: 21,
+      max: 50
+    }, {
+      min: 1,
+      max: 20
+    }, {
+      min: 0,
+      max: 0
+    }],
+    // align:'right' // 默认是left
+    inRange: {
+      symbol: 'rect',
+      color: ['#fff', '#ffaa85', '#ff7b69', '#cc2929', '#8c0d0d', '#660208']
+    },
+    itemHeight: 10,
+    itemWidth: 20
+  }],
+  tooltip: {
+    trigger: 'item'
+    // position: function (pos, params, dom, rect, size) {
+    //       // 鼠标在左侧时 tooltip 显示到右侧，鼠标在右侧时 tooltip 显示到左侧。
+    //       var obj = {top: 60};
+    //       obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+    //       return obj;
+    //   }
+  }
+}
+// myChart.setOption(option)
+// this.myChart.setOption(option);
 export default {
-  name: 'Map',
+  name: 'helloword',
+  mounted () {
+    this.getChartsData()
+    // this.mycharts = echarts.init(this.$refs.mapBox)
+    this.myChart = echarts.init(this.$refs.mapBox)
+    // var myChart = echarts.init(document.getElementById('map'));
+    this.myChart.setOption(option)
+  },
   data () {
     return {
-      data1: [],
-      total: '',
-      options: {
-        tooltip: {
-          triggerOn: 'mousemove',
-          padding: 8,
-          borderWidth: 1,
-          borderColor: '#409eff',
-          backgroundColor: 'rgba(255,255,255,0.7)',
-          textStyle: {
-            color: '#000000',
-            fontSize: 13
-          },
-          formatter: function (e, t, n) {
-            const data = e.data
-            // 模拟数据
-            data.specialImportant = Math.random() * 1000 | 0
-            data.import = Math.random() * 1000 | 0
-            data.compare = Math.random() * 1000 | 0
-            data.common = Math.random() * 1000 | 0
-            data.specail = Math.random() * 1000 | 0
-
-            const context = `
-               <div>
-                   <p><b style="font-size:15px;">${data.name}</b>(2020年第一季度)</p>
-                   <p class="tooltip_style"><span class="tooltip_left">事件总数</span><span class="tooltip_right">${data.value}</span></p>
-                   <p class="tooltip_style"><span class="tooltip_left">特别重大事件</span><span class="tooltip_right">${data.specialImportant}</span></p>
-                   <p class="tooltip_style"><span class="tooltip_left">重大事件</span><span class="tooltip_right">${data.import}</span></p>
-                   <p class="tooltip_style"><span class="tooltip_left">较大事件</span><span class="tooltip_right">${data.compare}</span></p>
-                   <p class="tooltip_style"><span class="tooltip_left">一般事件</span><span class="tooltip_right">${data.common}</span></p>
-                   <p class="tooltip_style"><span class="tooltip_left">特写事件</span><span class="tooltip_right">${data.specail}</span></p>
-               </div>
-            `
-            return context
-          }
-        },
-        visualMap: {
-          show: true,
-          left: 26,
-          bottom: 40,
-          showLabel: true,
-          pieces: [
-            {
-              gte: 100,
-              label: '>= 1000',
-              color: '#1f307b'
-            },
-            {
-              gte: 500,
-              lt: 999,
-              label: '500 - 999',
-              color: '#3c57ce'
-            },
-            {
-              gte: 100,
-              lt: 499,
-              label: '100 - 499',
-              color: '#6f83db'
-            },
-            {
-              gte: 10,
-              lt: 99,
-              label: '10 - 99',
-              color: '#9face7'
-            },
-            {
-              lt: 10,
-              label: '<10',
-              color: '#bcc5ee'
-            }
-          ]
-        },
-        geo: {
-          map: 'china',
-          scaleLimit: {
-            min: 1,
-            max: 2
-          },
-          zoom: 1,
-          top: 120,
-          label: {
-            normal: {
-              show: true,
-              fontSize: '14',
-              color: 'rgba(0,0,0,0.7)'
-            }
-          },
-          itemStyle: {
-            normal: {
-              borderColor: 'rgba(0, 0, 0, 0.2)'
-            },
-            emphasis: {
-              areaColor: '#f2d5ad',
-              shadowOffsetX: 0,
-              shadowOffsetY: 0,
-              borderWidth: 0
-            }
-          }
-        },
-        series: [
-          {
-            name: '突发事件',
-            type: 'map',
-            geoIndex: 0,
-            data: []
-          }
-        ]
-      },
-      dataList: [
-        {
-          name: '南海诸岛',
-          value: 100,
-          eventTotal: 100,
-          specialImportant: 10,
-          import: 10,
-          compare: 10,
-          common: 40,
-          specail: 20
-        },
-        {
-          name: '北京',
-          value: 540
-        },
-        {
-          name: '天津',
-          value: 130
-        },
-        {
-          name: '上海',
-          value: 400
-        },
-        {
-          name: '重庆',
-          value: 750
-        },
-        {
-          name: '河北',
-          value: 130
-        },
-        {
-          name: '河南',
-          value: 830
-        },
-        {
-          name: '云南',
-          value: 110
-        },
-        {
-          name: '辽宁',
-          value: 19
-        },
-        {
-          name: '黑龙江',
-          value: 150
-        },
-        {
-          name: '湖南',
-          value: 690
-        },
-        {
-          name: '安徽',
-          value: 60
-        },
-        {
-          name: '山东',
-          value: 39
-        },
-        {
-          name: '新疆',
-          value: 4
-        },
-        {
-          name: '江苏',
-          value: 31
-        },
-        {
-          name: '浙江',
-          value: 104
-        },
-        {
-          name: '江西',
-          value: 36
-        },
-        {
-          name: '湖北',
-          value: 52
-        },
-        {
-          name: '广西',
-          value: 33
-        },
-        {
-          name: '甘肃',
-          value: 7
-        },
-        {
-          name: '山西',
-          value: 5
-        },
-        {
-          name: '内蒙古',
-          value: 778
-        },
-        {
-          name: '陕西',
-          value: 22
-        },
-        {
-          name: '吉林',
-          value: 4
-        },
-        {
-          name: '福建',
-          value: 18
-        },
-        {
-          name: '贵州',
-          value: 5
-        },
-        {
-          name: '广东',
-          value: 98
-        },
-        {
-          name: '青海',
-          value: 1
-        },
-        {
-          name: '西藏',
-          value: 0
-        },
-        {
-          name: '四川',
-          value: 44
-        },
-        {
-          name: '宁夏',
-          value: 4
-        },
-        {
-          name: '海南',
-          value: 22
-        },
-        {
-          name: '台湾',
-          value: 3
-        },
-        {
-          name: '香港',
-          value: 5
-        },
-        {
-          name: '澳门',
-          value: 555
-        }
-      ]
-    }
-  },
-  methods: {
-    // 初始化中国地图
-    initEchartMap () {
-      const mapDiv = document.getElementById('china_map')
-      const myChart = echarts.init(mapDiv)
-      myChart.setOption(this.options)
-    },
-    // 修改echart配制
-    setEchartOption () {
-      this.options.series[0].data = this.dataList
-    },
-    async getChartsMapData () {
-      const { data } = await getProvinceChartsData(window.sessionStorage.getItem('invitationCode'))
-      this.data1 = data.data.groupProvince
-      this.total = data.data.total
-      console.log(data)
+      dataList: []
     }
   },
   created () {
-    this.getChartsMapData()
-    this.setEchartOption()
   },
-  mounted () {
-    this.$nextTick(() => {
-      this.initEchartMap()
-    })
+  methods: {
+    async getChartsData () {
+      const { data } = await getProvinceChartsData(window.sessionStorage.getItem('invitationCode'))
+      var checkedIdStr = JSON.stringify(data.data.GroupProvince)
+      window.sessionStorage.setItem('province', checkedIdStr)
+      console.log(data)
+      var arrAfter = JSON.parse(window.sessionStorage.getItem('province'))
+      console.log(arrAfter, typeof arrAfter)
+    }
   }
 }
 </script>
-<style scoped>
-#china_map_box {
-  height: 100%;
-  position: relative;
-}
-#china_map_box #china_map{
-  height: 100%;
-}
-#china_map_box .china_map_logo{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width:45px;
-}
-</style>
-<style>
-#china_map .tooltip_style{
-  line-height:1.7;
-  overflow: hidden;
-}
-#china_map .tooltip_left{
-  float: left;
-}
-#china_map .tooltip_right{
-  float: right;
-}
 
+<style scoped>
 </style>

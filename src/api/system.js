@@ -78,3 +78,67 @@ export const findDataRetrievalList = (current, size, year, province, serotype, i
     }
   })
 }
+
+/**
+ * 获取下载全体查询检索数据
+ * @param year
+ * @param province
+ * @param serotype
+ * @param invitationCode
+ * @returns {AxiosPromise}
+ */
+export const findDownloadDataRetrievalList = (year, province, serotype, invitationCode) => {
+  return request({
+    url: '/geneSequencing/searchAllInformationDownload',
+    method: 'POST',
+    params: {
+      year,
+      province,
+      serotype,
+      invitationCode
+    }
+  })
+}
+
+/**
+ * 下载数据
+ * @param current
+ * @param size
+ * @param year
+ * @param province
+ * @param serotype
+ * @param invitationCode
+ * @returns {AxiosPromise}
+ * @constructor
+ */
+export const DownloadDataRetrievalList = (current, size, year, province, serotype, invitationCode) => {
+  return request({
+    url: '/geneSequencing/searchAllInformation',
+    method: 'POST',
+    params: {
+      current,
+      size,
+      year,
+      province,
+      serotype,
+      invitationCode
+    },
+    responseType: 'blob'
+  })
+}
+
+/**
+ * 获取title ClassName
+ * @param invitationCode
+ * @returns {AxiosPromise}
+ */
+export const findDataTitleList = (invitationCode) => {
+  return request({
+    url: '/geneSequencing/getClassName',
+    method: 'GET',
+    params: {
+      invitationCode
+    },
+    responseType: 'blob'
+  })
+}

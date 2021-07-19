@@ -27,7 +27,7 @@
           </router-link>
         </div>
         <div class="menus-item">
-          <router-link to="/dataCharts">
+          <router-link :to="'/dataCharts'" @click.native="getClickCharts">
             <i class="iconChartsData" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: -2%;width: 1.04%">Data Charts</span>
           </router-link>
         </div>
@@ -100,6 +100,27 @@ export default {
     }
   },
   methods: {
+    getClickCharts () {
+      this.ifCanVisit()
+    },
+    async ifCanVisit () {
+      if (window.sessionStorage.getItem('id') === null) {
+        const confirmResult = await this.$confirm('您尚未登录，无权限访问数据图表页，是否将以游客方式登录？', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).catch(err => {
+          return err
+        })
+        // 如果点击确定返回字符串 confirm
+        // 如果点击取消返回字符串 cancel
+        if (confirmResult !== 'confirm') {
+          this.$router.back()
+          return this.$message.info('cancel')
+        }
+        this.$router.push('/login')
+      }
+    },
     logout () {
       window.sessionStorage.clear()
       this.$router.push('/system')

@@ -25,19 +25,21 @@
 import Footer from '../../components/layout/Footer'
 import Host from '../../components/echarts/Host'
 import Serotype from '@/components/echarts/Serotype'
-import Map from '@/components/echarts/Map'
+import Province from '@/components/echarts/Province'
+import Year from '@/components/echarts/Year'
 export default {
   name: 'dataCharts',
   data () {
     return {
-      com_list: ['Host', 'Serotype', 'Map'],
+      com_list: ['Host', 'Serotype', 'Province', 'Year'],
       currentTab: 'Host'
     }
   },
   components: {
     Host,
     Serotype,
-    Map,
+    Province,
+    Year,
     Footer
   },
   created () {

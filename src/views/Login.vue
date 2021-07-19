@@ -55,6 +55,7 @@
 
 <script>
 import { systemLogin } from '../api/system'
+import { getProvinceChartsData } from '@/api/echarts'
 export default {
   name: 'Login',
   data () {
@@ -101,6 +102,14 @@ export default {
       })
       this.mysystemlogin()
     },
+    async getChartsMapData () {
+      const { data } = await getProvinceChartsData(window.sessionStorage.getItem('invitationCode'))
+      var checkedIdStr = JSON.stringify(data.data.GroupProvince)
+      window.sessionStorage.setItem('province', checkedIdStr)
+      console.log(data)
+      var arrAfter = JSON.parse(window.sessionStorage.getItem('province'))
+      console.log(arrAfter, typeof arrAfter)
+    },
     async mysystemlogin () {
       const { data } = await systemLogin(this.loginForm.name, this.loginForm.password)
       if (data.code === 2003) {
@@ -124,6 +133,7 @@ export default {
           type: 'success',
           duration: 2000
         })
+        console.log(1)
         this.$root.USER.id = data.data.sysUser.userId
         this.$root.USER.name = data.data.sysUser.userName
         this.$root.USER.password = data.data.sysUser.password
@@ -132,7 +142,6 @@ export default {
         window.sessionStorage.setItem('name', data.data.sysUser.userName)
         window.sessionStorage.setItem('password', data.data.sysUser.password)
         window.sessionStorage.setItem('invitationCode', data.data.sysUser.invitationCode)
-        console.log(window.sessionStorage.getItem('id'))
         this.$router.push('/system')
         window.location.reload()
       }

@@ -18,13 +18,14 @@ import VueAMap from 'vue-amap'
 import BootstrapVue from 'bootstrap-vue'
 import 'vue-easytable/libs/theme-default/index.css' // import style
 import VueEasytable from 'vue-easytable' // import library
-
+import JsonExcel from 'vue-json-excel'
 import APlayer from '@moefe/vue-aplayer'
 Vue.use(APlayer, {
   defaultCover: 'https://github.com/u3u.png',
   productionTip: true
 })
 
+Vue.component('downloadExcel', JsonExcel)
 Vue.use(VueAMap)
 Vue.use(ElementUI)
 Vue.use(VueEasytable)

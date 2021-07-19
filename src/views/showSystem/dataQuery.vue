@@ -58,7 +58,20 @@
             </el-form-item>
             <el-form-item style="margin-left: 1.5%"  >
               <el-button icon="el-icon-refresh" @click="resetForm">重置</el-button>
-              <el-button icon="el-icon-search" @click="getQuery">查询</el-button>
+              <el-button class="btn-my" icon="el-icon-search" @click="getQuery">查询</el-button>
+              <el-button>
+              <download-excel
+                class   = "btn-my"
+                :data   = "json_data"
+                :fields = "json_fields"
+                worksheet = "My Worksheet"
+                type    = "csv"
+                name    = "Dna.xls"
+                @click.native="downloadCsv">
+                下载文件
+              </download-excel>
+              </el-button>
+<!--              <el-button icon="el-icon-download" @click="downloadCsv">下载文件</el-button>-->
             </el-form-item>
           </el-row>
         </el-form>
@@ -117,7 +130,13 @@
 
 <script>
 import Footer from '../../components/layout/Footer'
-import { findDataRetrievalList, findInitDataList } from '@/api/system'
+import {
+  DownloadDataRetrievalList,
+  findDataRetrievalList,
+  findDownloadDataRetrievalList,
+  findInitDataList
+} from '@/api/system'
+// import { saveAs } from 'file-saver'
 export default {
   name: 'dataQuery',
   // 注册组件
@@ -126,6 +145,8 @@ export default {
   },
   data () {
     return {
+      json_fields: {},
+      json_data: {},
       whichTable: 2,
       form: {
         Serotype: '',
@@ -307,6 +328,32 @@ export default {
         behavior: 'smooth',
         top: document.documentElement.clientHeight
       })
+    },
+    async downloadCsv () {
+      const { data } = await findDownloadDataRetrievalList(this.form.Year, this.form.Province, this.form.Serotype, window.sessionStorage.getItem('invitationCode'))
+      this.json_data = data.data.geneSequencing
+      console.log(1)
+      console.log(this.json_data)
+      this.json_fields = data.data.className
+      console.log(this.json_fields)
+    },
+    async downloadData () {
+      const { data } = await DownloadDataRetrievalList(this.pageIndex, this.pageSize, this.form.Year, this.form.Province, this.form.Serotype, window.sessionStorage.getItem('invitationCode'))
+      console.log(data)
+      this.saveFile(data, 'DNA.xls')
+    },
+    saveFile (data, name) {
+      try {
+        const blobUrl = window.URL.createObjectURL(data)
+        const a = document.createElement('a')
+        a.style.display = 'none'
+        a.download = name
+        a.type = 'csv'
+        a.href = blobUrl
+        a.click()
+      } catch (e) {
+        alert('保存文件出错')
+      }
     },
     async ifCanVisit () {
       if (window.sessionStorage.getItem('id') === null) {

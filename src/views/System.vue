@@ -26,8 +26,8 @@
           <div class="col-md-5">
             <div class="ibox float-e-margins">
               <div class="ibox-title" style="width: 47%;height: 31.375%;margin-top: 3%">
-                <p class="home-title">Visit Map</p>
-                <a href="https://clustrmaps.com/site/1biyz" title="Visit tracker"><img style="margin-top: -9%;" src="//clustrmaps.com/map_v2.png?cl=080808&w=500&t=m&d=83coUy6Rxh1QXy69RFx_WvfA4T_pf1vCwg7k3KvHIcI&co=ffffff&ct=808080" /></a>
+                <p class="home-title">Data Charts</p>
+                <a href="http://121.196.160.71/#/dataCharts" title="Data Charts"><img style="margin-top: -9%;" src="../assets/img/map.png" /></a>
               </div>
             </div>
           </div>
@@ -40,6 +40,16 @@
             </div>
           </div>
         </div>
+        <div class="row" style="margin-top: 2%">
+          <div class="col-md-5">
+            <div class="ibox float-e-margins">
+              <div class="ibox-title" style="width: 47%;height: 31.375%;margin-top: 3%">
+                <p class="home-title">Visit Map</p>
+                <a href="https://clustrmaps.com/site/1biyz" title="Visit tracker"><img style="margin-top: -9%;" src="//clustrmaps.com/map_v2.png?cl=080808&w=500&t=m&d=83coUy6Rxh1QXy69RFx_WvfA4T_pf1vCwg7k3KvHIcI&co=ffffff&ct=808080" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <Footer></Footer>
@@ -48,6 +58,7 @@
 
 <script>
 import Footer from '../components/layout/Footer'
+import { getProvinceChartsData } from '../api/echarts'
 export default {
   name: 'System',
   // 注册组件
@@ -60,7 +71,9 @@ export default {
     }
   },
   created () {
-    console.log(window.sessionStorage.getItem('id'))
+    if (window.sessionStorage.getItem('invitationCode') != null) {
+      this.getChartsMapData()
+    }
   },
   methods: {
     // 初始化
@@ -69,6 +82,14 @@ export default {
         behavior: 'smooth',
         top: document.documentElement.clientHeight
       })
+    },
+    async getChartsMapData () {
+      const { data } = await getProvinceChartsData(window.sessionStorage.getItem('invitationCode'))
+      var checkedIdStr = JSON.stringify(data.data.GroupProvince)
+      window.sessionStorage.setItem('province', checkedIdStr)
+      console.log(data)
+      var arrAfter = JSON.parse(window.sessionStorage.getItem('province'))
+      console.log(arrAfter, typeof arrAfter)
     }
   }
 }
