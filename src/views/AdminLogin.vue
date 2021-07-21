@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     back () {
-      this.$router.back()
+      this.$router.push('login')
     },
     async adminsubmitForm (loginForm) {
       // eslint-disable-next-line no-unused-expressions
@@ -109,6 +109,7 @@ export default {
         })
         this.$root.ADMIN.id = 1
         this.$root.ADMIN.name = 'admin'
+        window.sessionStorage.setItem('admin', '97nc06x')
         this.$router.push('/adminMain')
       }
       console.log(data)

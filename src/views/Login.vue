@@ -19,7 +19,7 @@
         </div>
 <!--        右半部分-->
         <div class="login-content password-login" id="password-login">
-          <p class="login-til">阿斯托里研究机构</p>
+          <p class="login-til">系统登录</p>
           <el-form :model="loginForm" :rules="loginRules" style="margin-top: 22%" ref="loginForm" label- width="0rem" class="login_form">
             <el-form-item prop="name">
               <el-input v-model="loginForm.name" placeholder="请输入账户" prefix-icon="el-icon-user-solid"></el-input>

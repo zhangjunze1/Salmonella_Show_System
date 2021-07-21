@@ -32,7 +32,7 @@
         </el-menu-item>
         <el-menu-item index="/science">
           <i class="el-icon-chat-dot-round"></i>
-          <span slot="title">实验</span>
+          <span slot="title">用户</span>
         </el-menu-item>
       </el-submenu>
 

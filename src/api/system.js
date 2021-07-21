@@ -142,3 +142,20 @@ export const findDataTitleList = (invitationCode) => {
     responseType: 'blob'
   })
 }
+
+/**
+ * 获取USER List
+ * @param invitationCode
+ * @returns {AxiosPromise}
+ */
+export const findUserList = (current, size, invitationCode) => {
+  return request({
+    url: '/sysUser/searchAllUserInformation',
+    method: 'POST',
+    params: {
+      current,
+      size,
+      invitationCode
+    }
+  })
+}

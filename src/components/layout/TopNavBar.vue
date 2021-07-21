@@ -27,7 +27,7 @@
           </router-link>
         </div>
         <div class="menus-item">
-          <router-link :to="'/dataCharts'" @click.native="getClickCharts">
+          <router-link :to="'/dataCharts'">
             <i class="iconChartsData" style="color: whitesmoke" /><span style="color: whitesmoke;margin-right: -2%;width: 1.04%">Data Charts</span>
           </router-link>
         </div>

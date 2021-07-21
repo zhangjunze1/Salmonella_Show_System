@@ -401,6 +401,7 @@ export default {
       this.form.Year = ''
       this.form.Serotype = ''
       this.getSerotypeList()
+      this.getQuery()
     }
   }
 }
