@@ -23,7 +23,7 @@
           :columns="columns"
           :row-style-option="rowStyleOption"
           :cell-selection-option="cellSelectionOption"
-          rowKeyFieldName="id"
+          rowKeyFieldName="userId"
           :border-around="true"
           :border-x="false"
           :border-y="true"
