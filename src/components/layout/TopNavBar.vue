@@ -65,13 +65,7 @@ export default {
     this.getUser()
   },
   mounted () {
-    // window.addEventListener('scroll', this.scroll)
   },
-  // data: function () {
-  //   return {
-  //
-  //   }
-  // },
   data () {
     return {
       navClass: '',

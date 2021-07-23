@@ -44,7 +44,6 @@
         </el-switch>
         </el-tooltip>
         <el-button style="margin-top: 10px;" type="primary" size="mini" @click="getInvitationCode()">生成邀请码</el-button>
-        <el-button style="margin-top: 10px;" type="primary" size="mini" @click="getdata()">...</el-button>
         <p style="margin-top: 10px">生成的邀请码是：{{this.code}}</p>
       </div>
     </row>
