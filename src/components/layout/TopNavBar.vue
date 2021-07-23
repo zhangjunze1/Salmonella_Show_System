@@ -2,24 +2,6 @@
   <div id="navClass" class="navClass" hide-on-scroll flat height="58">
     <!-- 电脑导航栏 -->
     <div class="d-md-block d-none nav-container">
-<!--      <div id="com-navigation" class="com-navigation">-->
-<!--        <div class="container" style="z-index: 400;">-->
-<!--&lt;!&ndash;          header栏&ndash;&gt;-->
-<!--          <ul class="nav-list clear">-->
-<!--&lt;!&ndash;            <li class="nav-li nav-li-menu">&ndash;&gt;-->
-<!--&lt;!&ndash;              <a href="javascript:void(0);" class="more-menu"></a>&ndash;&gt;-->
-<!--&lt;!&ndash;              <ul class="slidedown-list" style="display: none;">&ndash;&gt;-->
-<!--&lt;!&ndash;                <li><a href="https://www.oray.com"><span>贝锐</span></a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;              </ul>&ndash;&gt;-->
-<!--&lt;!&ndash;            </li>&ndash;&gt;-->
-<!--&lt;!&ndash;            分隔符&ndash;&gt;-->
-<!--&lt;!&ndash;            <li class="nav-li nav-li-line"><a href="javascript:void(0);"></a></li>&ndash;&gt;-->
-<!--            <li class="nav-li">-->
-<!--              <a href="/system" aria-current="page" class="nav-logo-wrap">-->
-<!--                <span class="nav-logo"></span>-->
-<!--              </a>-->
-<!--            </li>-->
-<!--          </ul>-->
       <div class="float-right nav-title">
         <div class="menus-item">
           <router-link to="/system">

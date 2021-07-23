@@ -5,6 +5,10 @@
         <p class="home-title" style="color: whitesmoke">
           沙门氏杆菌展示系统
         </p>
+        <div id="time"
+             style="font-weight: lighter;font-size: medium;margin-top:10px;width: 250px;height: 20px;float:right;color: #1e1e1e">
+          {{ nowDate }}
+        </div>
 <!--        &lt;!&ndash; 向下滚动 &ndash;&gt;-->
 <!--        <div class="scroll-down" @click="scrollDown">-->
 <!--          <h4><i class="el-icon-arrow-down" style="color: whitesmoke"></i></h4>-->
@@ -67,7 +71,8 @@ export default {
   },
   data () {
     return {
-
+      nowDate: '',
+      dateSelect: null
     }
   },
   created () {
@@ -75,7 +80,45 @@ export default {
       this.getChartsMapData()
     }
   },
+  mounted () {
+    this.currentTime()
+  },
   methods: {
+    currentTime () {
+      setInterval(this.formatDate, 500)
+    },
+    formatDate () {
+      const date = new Date()
+      const year = date.getFullYear() // 年
+      const month = date.getMonth() + 1 // 月
+      const day = date.getDate() // 日
+      const week = date.getDay() // 星期
+      const weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+      let hour = date.getHours() // 时
+      hour = hour < 10 ? '0' + hour : hour // 如果只有一位，则前面补零
+      let minute = date.getMinutes() // 分
+      minute = minute < 10 ? '0' + minute : minute // 如果只有一位，则前面补零
+      let second = date.getSeconds() // 秒
+      second = second < 10 ? '0' + second : second // 如果只有一位，则前面补零
+      this.nowDate = `${year}/${month}/${day} ${hour}:${minute}:${second} ${weekArr[week]}`
+    },
+    dateFormat (date) {
+      if (date === '') {
+        return '暂无数据'
+      }
+      const y = date.getFullYear()
+      let m = date.getMonth() + 1
+      m = m < 10 ? '0' + m : m
+      let d = date.getDate()
+      d = d < 10 ? '0' + d : d
+      const dateTime = y + '-' + m + '-' + d
+      return dateTime
+    },
+    beforeDestroy () {
+      if (this.formatDate) {
+        clearInterval(this.formatDate) // 在Vue实例销毁前，清除时间定时器
+      }
+    },
     // 初始化
     scrollDown () {
       window.scrollTo({
